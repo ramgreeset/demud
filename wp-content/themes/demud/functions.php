@@ -77,7 +77,7 @@ function demud_setup()
         )
     );
 
-    // Set up the WordPress core custom background feature.
+    // Настройте функцию пользовательского фона ядра WordPress.
     add_theme_support(
         'custom-background',
         apply_filters(
@@ -89,11 +89,11 @@ function demud_setup()
         )
     );
 
-    // Add theme support for selective refresh for widgets.
+    // Добавьте поддержку темы для выборочного обновления виджетов.
     add_theme_support('customize-selective-refresh-widgets');
 
     /**
-     * Add support for core custom logo.
+     * Добавьте поддержку основных пользовательских логотипов.
      *
      * @link https://codex.wordpress.org/Theme_Logo
      */
@@ -111,9 +111,9 @@ function demud_setup()
 add_action('after_setup_theme', 'demud_setup');
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
+ * Установите ширину содержимого в пикселях, основываясь на дизайне и таблице стилей темы.
  *
- * Priority 0 to make it available to lower priority callbacks.
+ *  Приоритет 0, чтобы сделать его доступным для обратных вызовов с более низким приоритетом.
  *
  * @global int $content_width
  */
@@ -125,7 +125,7 @@ function demud_content_width()
 add_action('after_setup_theme', 'demud_content_width', 0);
 
 /**
- * Register widget area.
+ * Зарегистрируйте область виджетов.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
@@ -152,6 +152,7 @@ add_action('widgets_init', 'demud_widgets_init');
 function demud_scripts()
 {
     wp_enqueue_style('demud-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_enqueue_style('demud-fonts', 'href=https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300..700&family=Inter:opsz,wght@14..32,100..900&display=swap');
     wp_style_add_data('demud-style', 'rtl', 'replace');
 
     wp_enqueue_script('demud-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);

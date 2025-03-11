@@ -12,33 +12,82 @@
 ?>
 
 <footer class="footer">
-    <div class="container footer__container">
-        <span class="footer__copy">&copy; 2025 DEMUD. Все права защищены.</span>
+    <div class="container">
+        <div class="footer__container">
+            <div class="footer__item">
+                <a class="logo" href="/">DEMUD</a>
+                <span class="footer__text">Минимализм в цветах и деталях...</span>
 
-        <ul class="footer__list">
-            <li class="footer__list-item">
-                <a class="footer__list-link" href="">Оптовикам</a>
-            </li>
-            <li class="footer__list-item">
-                <a class="footer__list-link" href="">Презентация</a>
-            </li>
-            <li class="footer__list-item">
-                <a class="footer__list-link" href="">Политика конфиденциальности</a>
-            </li>
-        </ul>
+                <div class="social">
+                    <ul class="social__list">
+                        <li class="social__item">
+                            <a class="social__link" href="">
+                                <svg class="icon">
+                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#telegram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="">
+                                <svg class="icon">
+                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="">
+                                <svg class="icon">
+                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#pinterest"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>      </div>
+
+            <div class="footer__grid">
+                <div class="footer__item">
+                    <span class="footer__title">Компания</span>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="">О нас</a>
+                        </li>
+                        <li>
+                            <a href="">Новости</a>
+                        </li>
+                        <li>
+                            <a href="">Галерея</a>
+                        </li>
+                        <li>
+                            <a href="">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__item">
+                    <span class="footer__title">Документы</span>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="">Сотрудничество</a>
+                        </li>
+                        <li>
+                            <a href="">Презентация</a>
+                        </li>
+                        <li>
+                            <a href="">Коммерческое предложение</a>
+                        </li>
+                        <li>
+                            <a href="">Политика конфиденциальности</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__copy">
+            <span class="footer__text">&copy; 2025 DEMUD. Все права защищены.</span>
+        </div>
     </div>
 </footer>
-
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'demud' ), 'demud', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

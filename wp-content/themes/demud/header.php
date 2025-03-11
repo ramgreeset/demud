@@ -22,36 +22,72 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page layout" class="site">
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$demud_description = get_bloginfo( 'description', 'display' );
-			if ( $demud_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $demud_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+<div class="layout">
+    <header class="header">
+        <div class="container header__container">
+            <a class="logo" href="/">DEMUD</a>
+            <div class="header__buttons">
+                <div class="social">
+                    <ul class="social__list">
+                        <li class="social__item">
+                            <a class="social__link" href="">
+                                <svg class="icon">
+                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#telegram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="">
+                                <svg class="icon">
+                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a class="social__link" href="">
+                                <svg class="icon">
+                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#pinterest"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="header__button">
+                    <svg class="icon">
+                        <use xlink:href="/assets/sprite-BRnjzVwh.svg#handbag"></use>
+                    </svg>
+                    <span class="header__button-count">0</span>
+                </button>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'demud' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header>
+                <button class="header__button js-menu-button">
+                    <svg class="icon">
+                        <use xlink:href="/assets/sprite-BRnjzVwh.svg#list"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>  <div class="menu js-menu">
+        <div class="menu__container">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a class="menu__link" href="">Главная</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">О нас</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">Магазин</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">Новости</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">Галерея</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+

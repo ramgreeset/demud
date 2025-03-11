@@ -27,7 +27,9 @@ function demud_body_classes( $classes ) {
 add_filter( 'body_class', 'demud_body_classes' );
 
 /**
- * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ * Добавьте заголовок автоматического обнаружения pingback url для отдельных постов, страниц или вложений.
+ *
+ * Pingback — это технология уведомлений между сайтами. Если кто-то ссылается на твою статью, WordPress автоматически отправит уведомление (pingback) на сайт-источник.
  */
 function demud_pingback_header() {
 	if ( is_singular() && pings_open() ) {
@@ -35,3 +37,4 @@ function demud_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'demud_pingback_header' );
+
