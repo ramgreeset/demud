@@ -1,0 +1,19 @@
+# Исключаем WordPress Core
+/wp-admin/
+/wp-includes/
+index.php
+license.txt
+readme.html
+wp-*.php
+
+# Исключаем загрузки
+/wp-content/uploads/
+
+# Исключаем кеш и логи
+wp-content/cache/
+wp-content/backup/
+*.log
+
+# Исключаем конфиденциальные данные
+wp-config.php
+.htaccess

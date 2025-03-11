@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ramgree4_n91yEct
+      WORDPRESS_DB_PASSWORD: 4g4lA6.unSxDYwRZh(b4
+      WORDPRESS_DB_NAME: ramgree4_WmdZ1L2i05mNHkGVs6UE
+    volumes:
+      - ./wp-content:/var/www/html/wp-content # Монтируем папку с темами и плагинами
+
+  db:
+    image: mysql:8.0
+    container_name: wordpress_db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ramgree4_WmdZ1L2i05mNHkGVs6UE
+      MYSQL_USER: ramgree4_n91yEct
+      MYSQL_PASSWORD: 4g4lA6.unSxDYwRZh(b4
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"  # Порт для доступа к phpMyAdmin
+    environment:
+      PMA_HOST: db  # Имя сервиса базы данных, определенное в docker-compose.yml
+      PMA_USER: root  # Пользователь базы данных
+      PMA_PASSWORD: root  # Пароль для пользователя root
+    depends_on:
+      - db
+
+volumes:
+  db_data:
