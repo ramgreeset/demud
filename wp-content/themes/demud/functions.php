@@ -61,8 +61,8 @@ function demud_setup()
     );
 
     /*
-        * Switch default core markup for search form, comment form, and comments
-        * to output valid HTML5.
+        * Переключите стандартную разметку ядра для формы поиска, формы комментариев и комментариев
+        * для вывода валидного HTML5.
         */
     add_theme_support(
         'html5',
@@ -147,15 +147,19 @@ function demud_widgets_init()
 add_action('widgets_init', 'demud_widgets_init');
 
 /**
- * Enqueue scripts and styles.
+ * Записать скрипты и стили.
  */
 function demud_scripts()
 {
     wp_enqueue_style('demud-style', get_stylesheet_uri(), array(), _S_VERSION);
     wp_enqueue_style('demud-fonts', 'href=https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300..700&family=Inter:opsz,wght@14..32,100..900&display=swap');
     wp_style_add_data('demud-style', 'rtl', 'replace');
+    wp_localize_script('demud-js-path', 'themeDirectory', array(
+        'svgPath' => get_template_directory_uri() . '/assets/sprite.svg#list'
+    ));
 
     wp_enqueue_script('demud-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+    wp_enqueue_script('demud-main-js', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');

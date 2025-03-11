@@ -32,21 +32,21 @@
                         <li class="social__item">
                             <a class="social__link" href="">
                                 <svg class="icon">
-                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#telegram"></use>
+                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#telegram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="social__item">
                             <a class="social__link" href="">
                                 <svg class="icon">
-                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#instagram"></use>
+                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#instagram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="social__item">
                             <a class="social__link" href="">
                                 <svg class="icon">
-                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#pinterest"></use>
+                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#pinterest"></use>
                                 </svg>
                             </a>
                         </li>
@@ -54,14 +54,14 @@
                 </div>
                 <button class="header__button">
                     <svg class="icon">
-                        <use xlink:href="/assets/sprite-BRnjzVwh.svg#handbag"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#handbag"></use>
                     </svg>
                     <span class="header__button-count">0</span>
                 </button>
 
                 <button class="header__button js-menu-button">
                     <svg class="icon">
-                        <use xlink:href="/assets/sprite-BRnjzVwh.svg#list"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#list"></use>
                     </svg>
                 </button>
             </div>

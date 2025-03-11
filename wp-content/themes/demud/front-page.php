@@ -60,7 +60,7 @@ get_header();
                     <button class="button button--link">
                         Все товары
                         <svg class="section__icon icon">
-                            <use xlink:href="/assets/sprite-BRnjzVwh.svg#arrow-right"></use>
+                            <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#arrow-right"></use>
                         </svg>
                     </button>
                 </div>
@@ -82,7 +82,7 @@ get_header();
                                 <span class="price__new">1500₽</span>
                             </div>    <button class="product-card__button">
                                 <svg class="icon">
-                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#handbag"></use>
+                                    <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#handbag"></use>
                                 </svg>
                             </button>
                         </div>
@@ -103,7 +103,7 @@ get_header();
                                 <span class="price__new">1500₽</span>
                             </div>    <button class="product-card__button">
                                 <svg class="icon">
-                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#handbag"></use>
+                                    <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#handbag"></use>
                                 </svg>
                             </button>
                         </div>
@@ -124,7 +124,7 @@ get_header();
                                 <span class="price__new">1500₽</span>
                             </div>    <button class="product-card__button">
                                 <svg class="icon">
-                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#handbag"></use>
+                                    <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#handbag"></use>
                                 </svg>
                             </button>
                         </div>
@@ -145,7 +145,7 @@ get_header();
                                 <span class="price__new">1500₽</span>
                             </div>    <button class="product-card__button">
                                 <svg class="icon">
-                                    <use xlink:href="/assets/sprite-BRnjzVwh.svg#handbag"></use>
+                                    <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#handbag"></use>
                                 </svg>
                             </button>
                         </div>
@@ -159,7 +159,7 @@ get_header();
                     <button class="button button--link">
                         Все новости
                         <svg class="section__icon icon">
-                            <use xlink:href="/assets/sprite-BRnjzVwh.svg#arrow-right"></use>
+                            <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#arrow-right"></use>
                         </svg>
                     </button>
                 </div>
@@ -271,7 +271,7 @@ get_header();
                         <div class="accordion__header js-accordion-header">
                             <h3 class="accordion__title">Как ухаживать за изделием?</h3>
                             <svg class="accordion__icon icon">
-                                <use xlink:href="/assets/sprite-BRnjzVwh.svg#caret-down"></use>
+                                <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#caret-down"></use>
                             </svg>
                         </div>
                         <div class="accordion__body js-accordion-body">
@@ -296,7 +296,7 @@ get_header();
                         <div class="accordion__header js-accordion-header">
                             <h3 class="accordion__title">Как оформить заказ?</h3>
                             <svg class="accordion__icon icon">
-                                <use xlink:href="/assets/sprite-BRnjzVwh.svg#caret-down"></use>
+                                <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#caret-down"></use>
                             </svg>
                         </div>
                         <div class="accordion__body js-accordion-body">
@@ -321,7 +321,7 @@ get_header();
                         <div class="accordion__header js-accordion-header">
                             <h3 class="accordion__title">Как оплатить заказ?</h3>
                             <svg class="accordion__icon icon">
-                                <use xlink:href="/assets/sprite-BRnjzVwh.svg#caret-down"></use>
+                                <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#caret-down"></use>
                             </svg>
                         </div>
                         <div class="accordion__body js-accordion-body">
@@ -346,7 +346,7 @@ get_header();
                         <div class="accordion__header js-accordion-header">
                             <h3 class="accordion__title">Как оформить доставку?</h3>
                             <svg class="accordion__icon icon">
-                                <use xlink:href="/assets/sprite-BRnjzVwh.svg#caret-down"></use>
+                                <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#caret-down"></use>
                             </svg>
                         </div>
                         <div class="accordion__body js-accordion-body">
@@ -377,7 +377,7 @@ get_header();
                     <ul class="main-contacts__list">
                         <li class="main-contacts__item">
                             <svg class="main-contacts__item-icon icon">
-                                <use xlink:href="/assets/sprite-BRnjzVwh.svg#map-pin"></use>
+                                <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#map-pin"></use>
                             </svg>
                             <div class="main-contacts__item-content">
                                 <span class="main-contacts__item-title">Адрес</span>
@@ -386,7 +386,7 @@ get_header();
                         </li>
                         <li class="main-contacts__item">
                             <svg class="main-contacts__item-icon icon">
-                                <use xlink:href="/assets/sprite-BRnjzVwh.svg#phone"></use>
+                                <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#phone"></use>
                             </svg>
                             <div class="main-contacts__item-content">
                                 <span class="main-contacts__item-title">Телефон</span>
@@ -395,7 +395,7 @@ get_header();
                         </li>
                         <li class="main-contacts__item">
                             <svg class="main-contacts__item-icon icon">
-                                <use xlink:href="/assets/sprite-BRnjzVwh.svg#envelope"></use>
+                                <use href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#envelope"></use>
                             </svg>
                             <div class="main-contacts__item-content">
                                 <span class="main-contacts__item-title">Email</span>

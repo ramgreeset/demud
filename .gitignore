@@ -17,3 +17,4 @@ wp-content/backup/
 # Исключаем конфиденциальные данные
 wp-config.php
 .htaccess
+.idea
