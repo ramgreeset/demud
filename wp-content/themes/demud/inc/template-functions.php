@@ -38,3 +38,15 @@ function demud_pingback_header() {
 }
 add_action( 'wp_head', 'demud_pingback_header' );
 
+//My function
+
+//Отключаем стили WooCommerce
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+add_theme_support('menus');
+//Инициализируем меню для header и footer
+register_nav_menus([
+    'header-menu' => __('Header Menu', 'demud'),
+    'footer-menu' => esc_html__('Footer Menu', 'demud'),
+]);
+
+

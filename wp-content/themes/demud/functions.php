@@ -152,7 +152,7 @@ add_action('widgets_init', 'demud_widgets_init');
 function demud_scripts()
 {
     wp_enqueue_style('demud-style', get_stylesheet_uri(), array(), _S_VERSION);
-    wp_enqueue_style('demud-fonts', 'href=https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300..700&family=Inter:opsz,wght@14..32,100..900&display=swap');
+    wp_enqueue_style('demud-google-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300..700&family=Inter:opsz,wght@14..32,100..900&display=swap');
     wp_style_add_data('demud-style', 'rtl', 'replace');
     wp_localize_script('demud-js-path', 'themeDirectory', array(
         'svgPath' => get_template_directory_uri() . '/assets/sprite.svg#list'
@@ -182,6 +182,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Подключение кастомного класса для элементов списка <ul>
+ */
+require get_template_directory() . '/inc/class-demud-header-menu.php';
 
 /**
  * Customizer additions.
