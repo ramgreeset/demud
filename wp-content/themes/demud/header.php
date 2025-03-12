@@ -26,7 +26,7 @@
 <div class="layout">
     <header class="header">
         <div class="container header__container">
-            <a class="logo" href="<?php home_url(); ?>"><?php bloginfo('name'); ?></a>
+            <a class="logo" href="<?php echo home_url();?>"><?php bloginfo('name');?></a>
             <div class="header__buttons">
                 <div class="social">
                     <ul class="social__list">
@@ -76,26 +76,6 @@
                 'menu_class' => 'menu__list',
                 'walker' => new Demud_Header_Menu(),
             ]); ?>
-            <!--            <ul class="menu__list">-->
-            <!--                <li class="menu__item">-->
-            <!--                    <a class="menu__link" href="">Главная</a>-->
-            <!--                </li>-->
-            <!--                <li class="menu__item">-->
-            <!--                    <a class="menu__link" href="">О нас</a>-->
-            <!--                </li>-->
-            <!--                <li class="menu__item">-->
-            <!--                    <a class="menu__link" href="">Магазин</a>-->
-            <!--                </li>-->
-            <!--                <li class="menu__item">-->
-            <!--                    <a class="menu__link" href="">Новости</a>-->
-            <!--                </li>-->
-            <!--                <li class="menu__item">-->
-            <!--                    <a class="menu__link" href="">Галерея</a>-->
-            <!--                </li>-->
-            <!--                <li class="menu__item">-->
-            <!--                    <a class="menu__link" href="">Контакты</a>-->
-            <!--                </li>-->
-            <!--            </ul>-->
         </div>
     </div>
 

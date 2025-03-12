@@ -47,38 +47,20 @@
             <div class="footer__grid">
                 <div class="footer__item">
                     <span class="footer__title">Компания</span>
-                    <ul class="footer__list">
-                        <li>
-                            <a href="">О нас</a>
-                        </li>
-                        <li>
-                            <a href="">Новости</a>
-                        </li>
-                        <li>
-                            <a href="">Галерея</a>
-                        </li>
-                        <li>
-                            <a href="">Контакты</a>
-                        </li>
-                    </ul>
+                    <?php wp_nav_menu([
+                        'theme_location' => 'company-menu',
+                        'container' => false,
+                        'menu_class' => 'footer__list',
+                    ]); ?>
                 </div>
 
                 <div class="footer__item">
                     <span class="footer__title">Документы</span>
-                    <ul class="footer__list">
-                        <li>
-                            <a href="">Сотрудничество</a>
-                        </li>
-                        <li>
-                            <a href="">Презентация</a>
-                        </li>
-                        <li>
-                            <a href="">Коммерческое предложение</a>
-                        </li>
-                        <li>
-                            <a href="">Политика конфиденциальности</a>
-                        </li>
-                    </ul>
+                    <?php wp_nav_menu([
+                        'theme_location' => 'document-menu',
+                        'container' => false,
+                        'menu_class' => 'footer__list',
+                    ]); ?>
                 </div>
             </div>
         </div>

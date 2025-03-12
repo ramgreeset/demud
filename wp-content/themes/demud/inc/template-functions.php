@@ -42,11 +42,13 @@ add_action( 'wp_head', 'demud_pingback_header' );
 
 //Отключаем стили WooCommerce
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+
+//Поддержка меню | Инициализируем меню для header и footer
 add_theme_support('menus');
-//Инициализируем меню для header и footer
 register_nav_menus([
-    'header-menu' => __('Header Menu', 'demud'),
-    'footer-menu' => esc_html__('Footer Menu', 'demud'),
+    'header-menu' => esc_html__('Header Menu', 'demud'),
+    'company-menu' => esc_html__('Footer Company Menu', 'demud'),
+    'document-menu' => esc_html__('Footer Document Menu', 'demud'),
 ]);
 
 
