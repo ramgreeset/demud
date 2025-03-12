@@ -23,21 +23,21 @@
                         <li class="social__item">
                             <a class="social__link" href="">
                                 <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#telegram"></use>
+                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#telegram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="social__item">
                             <a class="social__link" href="">
                                 <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#instagram"></use>
+                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#instagram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="social__item">
                             <a class="social__link" href="">
                                 <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite-BRnjzVwh.svg#pinterest"></use>
+                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#pinterest"></use>
                                 </svg>
                             </a>
                         </li>

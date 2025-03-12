@@ -16,8 +16,6 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <?php wp_head(); ?>
 </head>
 
@@ -31,38 +29,38 @@
                 <div class="social">
                     <ul class="social__list">
                         <li class="social__item">
-                            <a class="social__link" href="">
+                            <a class="social__link button button--icon" href="">
                                 <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri();; ?>/assets/sprite-BRnjzVwh.svg#telegram"></use>
+                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#telegram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="social__item">
-                            <a class="social__link" href="">
+                            <a class="social__link button button--icon" href="">
                                 <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri();; ?>/assets/sprite-BRnjzVwh.svg#instagram"></use>
+                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#instagram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="social__item">
-                            <a class="social__link" href="">
+                            <a class="social__link button button--icon" href="">
                                 <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite-BRnjzVwh.svg#pinterest"></use>
+                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#pinterest"></use>
                                 </svg>
                             </a>
                         </li>
                     </ul>
                 </div>
-                <button class="header__button">
+                <button class="header__button button button--icon">
                     <svg class="icon">
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite-BRnjzVwh.svg#handbag"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#handbag"></use>
                     </svg>
-                    <span class="header__button-count">0</span>
+                    <span class="header__button-count chip">0</span>
                 </button>
 
-                <button class="header__button js-menu-button">
+                <button class="header__button button button--icon js-menu-button">
                     <svg class="icon">
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite-BRnjzVwh.svg#list"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#list"></use>
                     </svg>
                 </button>
             </div>
