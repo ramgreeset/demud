@@ -26,31 +26,18 @@
         <div class="container header__container">
             <a class="logo" href="<?php echo home_url();?>"><?php bloginfo('name');?></a>
             <div class="header__buttons">
-                <div class="social">
-                    <ul class="social__list">
-                        <li class="social__item">
-                            <a class="social__link button button--icon" href="">
-                                <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#telegram"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social__item">
-                            <a class="social__link button button--icon" href="">
-                                <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#instagram"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social__item">
-                            <a class="social__link button button--icon" href="">
-                                <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#pinterest"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <button class="header__button button button--icon">
+                    <svg class="icon">
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#user"></use>
+                    </svg>
+                </button>
+
+                <button class="header__button button button--icon">
+                    <svg class="icon">
+                        <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#heart"></use>
+                    </svg>
+                </button>
+
                 <button class="header__button button button--icon">
                     <svg class="icon">
                         <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#handbag"></use>
@@ -60,7 +47,7 @@
 
                 <button class="header__button button button--icon js-menu-button">
                     <svg class="icon">
-                        <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#list"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#list"></use>
                     </svg>
                 </button>
             </div>
@@ -74,6 +61,32 @@
                 'menu_class' => 'menu__list',
                 'walker' => new Demud_Header_Menu(),
             ]); ?>
+            <div class="social">
+                <ul class="social__list">
+                    <li class="social__item">
+                        <a class="social__link button button--icon" href="">
+                            <svg class="icon">
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#telegram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link button button--icon" href="">
+                            <svg class="icon">
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a class="social__link button button--icon" href="">
+                            <svg class="icon">
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#pinterest"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
+
     </div>
 

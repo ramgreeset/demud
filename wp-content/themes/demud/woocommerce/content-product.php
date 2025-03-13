@@ -16,62 +16,78 @@
  */
 
 defined('ABSPATH') || exit;
-
 global $product;
-
 // Check if the product is a valid WooCommerce product and ensure its visibility before proceeding.
 if (!is_a($product, WC_Product::class) || !$product->is_visible()) {
     return;
 }
 ?>
+
 <div <?php wc_product_class('product-card', $product); ?>>
 
     <?php
     /**
      * Hook: woocommerce_before_shop_loop_item.
      *
-     * @hooked woocommerce_template_loop_product_link_open - 10
+     * @hooked woocommerce_template_loop_product_link_open - 10 - disable in demud/inc/template-function
      */
-    do_action('woocommerce_before_shop_loop_item');
+    do_action('woocommerce_before_shop_loop_item'); ?>
 
+
+    <?php
+    //    img
     /**
      * Hook: woocommerce_before_shop_loop_item_title.
      *
-     * @hooked woocommerce_show_product_loop_sale_flash - 10
-     * @hooked woocommerce_template_loop_product_thumbnail - 10
+     * @hooked woocommerce_show_product_loop_sale_flash - 10 - disable in demud/inc/template-function
+     * @hooked woocommerce_template_loop_product_thumbnail - 10 - disable in demud/inc/template-function
      */
+    do_action('demud_open_link');
+    the_post_thumbnail('woocommerce_thumbnail', array('class' => 'product-card__img'));
     do_action('woocommerce_before_shop_loop_item_title');
-
+    do_action('demud_close_link');
     ?>
-    <div class="product-card__body">
 
+    <div class="product-card__body">
         <?php
+        //    title
         /**
          * Hook: woocommerce_shop_loop_item_title.
          *
          * @hooked woocommerce_template_loop_product_title - 10
-         * @hooked woocommerce_template_loop_product_link_close - 5
          */
+        do_action('demud_open_link');
         do_action('woocommerce_shop_loop_item_title');
+        do_action('demud_close_link');
         ?>
-<!--        Выводит короткое описание с 10 словами-->
-        <p><?php echo wp_trim_words( get_the_excerpt(), 10); ?></p>
+        <p class="product-card__description"><?php echo wp_trim_words(get_the_excerpt(), 10); ?></p>
+
     </div> <!--product-card__body-->
-    <?php
-    /**
-     * Hook: woocommerce_after_shop_loop_item_title.
-     *
-     * @hooked woocommerce_template_loop_rating - 5
-     * @hooked woocommerce_template_loop_price - 10
-     */
-    do_action('woocommerce_after_shop_loop_item_title');
 
-    /**
-     * Hook: woocommerce_after_shop_loop_item.
-     *
-     * @hooked woocommerce_template_loop_add_to_cart - 10
-     */
-    do_action('woocommerce_after_shop_loop_item');
-    ?>
+    <div class="product-card__footer">
+        <?php
+//        price
+        /**
+         * Hook: woocommerce_after_shop_loop_item_title.
+         *
+         * @hooked woocommerce_template_loop_rating - 5 - disable in demud/inc/template-function
+         * @hooked woocommerce_template_loop_price - 10
+         */
+        do_action('woocommerce_after_shop_loop_item_title'); ?>
 
-</div> <!--section__grid-->
+        <?php
+//        add-to-card
+        /**
+         * Hook: woocommerce_after_shop_loop_item.
+         *
+         * @hooked woocommerce_template_loop_product_link_close - 5 - disable in demud/inc/template-function
+         * @hooked woocommerce_template_loop_add_to_cart - 10
+         */
+        do_action('woocommerce_after_shop_loop_item');
+
+        ?>
+
+
+    </div> <!--product-card__footer-->
+
+</div> <!--product-card-->

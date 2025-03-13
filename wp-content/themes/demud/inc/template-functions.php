@@ -55,12 +55,23 @@ register_nav_menus([
     'document-menu' => esc_html__('Footer Document Menu', 'demud'),
 ]);
 
-// Переопределяем закрывающий тег </a> в html на уровень выше
-remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5);
-add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 5);
-
 // Убираем распродажу
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
+
+
+
+
+//Убираем <a> обертку
+remove_action('woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10);
+remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5);
+
+remove_action('woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_thumbnail', 10);
+
+remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5);
+
+add_action('demud_open_link','woocommerce_template_loop_product_link_open',10);
+add_action('demud_close_link','woocommerce_template_loop_product_link_close',5);
+
 
 // Переопределяем тег в карточке товара на <h3>
 remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
@@ -70,7 +81,25 @@ function h3_template_loop_product_title() {
 add_action('woocommerce_shop_loop_item_title', 'h3_template_loop_product_title', 10);
 
 
-//TODO:Подумай за оптимизацию картинок для мобилки.
+
+add_filter('woocommerce_get_price_html', function($price_html, $product) {
+    // Проверяем, есть ли у товара скидка
+    if ($product->is_on_sale() && $product->get_regular_price()) {
+        $regular_price = wc_get_price_to_display($product, ['price' => $product->get_regular_price()]); // Старая цена
+        $sale_price = wc_get_price_to_display($product, ['price' => $product->get_price()]); // Новая цена
+        $currency = get_woocommerce_currency_symbol(); // Символ валюты
+
+        // Формируем HTML с нужными классами
+        $price_html = '<span class="price">
+            <del aria-hidden="true"><span class="woocommerce-Price-amount amount price__old"><bdi>' . number_format($regular_price, 2, ',', ' ') . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></bdi></span></del>
+            <ins aria-hidden="true"><span class="woocommerce-Price-amount amount price__new"><bdi>' . number_format($sale_price, 2, ',', ' ') . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></bdi></span></ins>
+        </span>';
+    }
+
+    return $price_html;
+}, 10, 2);
+
+//TODO:Подумай за оптимизацию картинок для мобилки. Восстанови wp_calculate_image_srcset_meta
 
 // Для каждого размера экрана отдает картинку определенного размера ХОРОШО ДЛЯ ОПТИМИЗАЦИИ
 add_filter( 'wp_calculate_image_srcset_meta', '__return_null' );

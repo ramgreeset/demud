@@ -175,34 +175,6 @@ get_header();
             </div>
         </div>
     </section>
-<!--    Галерея-->
-    <section class="main-gallery">
-        <div class="container">
-            <h2>Галерея</h2>
-            <div class="main-gallery__grid">
-                <div class="main-gallery__item main-gallery__item--lg">
-                    <img class="main-gallery__item-img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png"
-                         alt="">
-                </div>
-                <div class="main-gallery__item">
-                    <img class="main-gallery__item-img"
-                         src="<?php echo get_template_directory_uri(); ?>/assets/hero.png" alt="">
-                </div>
-                <div class="main-gallery__item">
-                    <img class="main-gallery__item-img"
-                         src="<?php echo get_template_directory_uri(); ?>/assets/product.png" alt="">
-                </div>
-                <div class="main-gallery__item">
-                    <img class="main-gallery__item-img"
-                         src="<?php echo get_template_directory_uri(); ?>/assets/about.png" alt="">
-                </div>
-                <div class="main-gallery__item">
-                    <img class="main-gallery__item-img"
-                         src="<?php echo get_template_directory_uri(); ?>/assets/gallery.png" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
 <!--    Вопросы-->
     <section class="section faq">
         <div class="container">
