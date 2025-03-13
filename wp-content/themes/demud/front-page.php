@@ -16,6 +16,7 @@ get_header();
 ?>
 
     <main class="main">
+<!--    Топ-->
     <section class="hero">
         <div class="container hero__container">
             <div class="hero__item hero__item--light">
@@ -29,7 +30,7 @@ get_header();
             </div>
         </div>
     </section>
-
+<!--О нас-->
     <section class="main-about">
         <div class="container main-about__container">
             <div class="main-about__item">
@@ -57,6 +58,7 @@ get_header();
             </div>
         </div>
     </section>
+<!--    Товары-->
     <section class="section">
         <div class="container">
             <div class="section__header">
@@ -68,36 +70,12 @@ get_header();
                     </svg>
                 </button>
             </div>
-            <div class="section__grid">
-                <?php echo do_shortcode('[featured_products]')?>
-                <div class="product-card">
-                    <a class="product-card__header" href="#">
-                        <img class="product-card__img"
-                             src="<?php echo get_template_directory_uri(); ?>/assets/product.png" alt="">
-                        <span class="product-card__badge badge">New</span>
-                    </a>
-                    <div class="product-card__body">
-                        <a href="#">
-                            <h3 class="product-card__title">Serenity</h3>
-                        </a>
-                        <p class="product-card__description">Подставка для благовоний</p>
-                    </div>
-                    <div class="product-card__footer">
-                        <div class="price">
-                            <span class="price__old">2000₽</span>
-                            <span class="price__new">1500₽</span>
-                        </div>
-                        <button class="button button--icon">
-                            <svg class="icon">
-                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#handbag"></use>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
+            <div>
+                <?php echo do_shortcode('[featured_products limit="4"]')?>
             </div>
         </div>
     </section>
+<!--    Новости-->
     <section class="section">
         <div class="container">
             <div class="section__header">
@@ -197,6 +175,7 @@ get_header();
             </div>
         </div>
     </section>
+<!--    Галерея-->
     <section class="main-gallery">
         <div class="container">
             <h2>Галерея</h2>
@@ -224,6 +203,7 @@ get_header();
             </div>
         </div>
     </section>
+<!--    Вопросы-->
     <section class="section faq">
         <div class="container">
             <div class="section__header">
@@ -341,6 +321,7 @@ get_header();
             </div>
         </div>
     </section>
+<!--    Контакты-->
     <section class="main-contacts">
         <div class="container main-contacts__container">
             <div>
@@ -381,6 +362,6 @@ get_header();
             </div>
         </div>
     </section>
-
+    </main>
 <?php
 get_footer();
