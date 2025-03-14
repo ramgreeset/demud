@@ -61,25 +61,25 @@ remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_produ
 
 
 
-//Убираем <a> обертку
+//Убирает <a> обертку
 remove_action('woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10);
 remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5);
-
+//Открепляет изображения от хука для кастомизации
 remove_action('woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_thumbnail', 10);
-
+//Убирает рейтинг
 remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5);
 
+//Свои хуки с тегами <a> для кастомизации карточек товара
 add_action('demud_open_link','woocommerce_template_loop_product_link_open',10);
 add_action('demud_close_link','woocommerce_template_loop_product_link_close',5);
 
 
-// Переопределяем тег в карточке товара на <h3>
+// Переопределяет тег в карточке товара на <h3>
 remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
 function h3_template_loop_product_title() {
     echo '<h3 class="product-card__title">' . get_the_title() . '</h3>';
 }
 add_action('woocommerce_shop_loop_item_title', 'h3_template_loop_product_title', 10);
-
 
 
 add_filter('woocommerce_get_price_html', function($price_html, $product) {
@@ -89,15 +89,27 @@ add_filter('woocommerce_get_price_html', function($price_html, $product) {
         $sale_price = wc_get_price_to_display($product, ['price' => $product->get_price()]); // Новая цена
         $currency = get_woocommerce_currency_symbol(); // Символ валюты
 
+        // Убираем дробную часть, если число целое
+        $regular_price = floor($regular_price) == $regular_price ? number_format($regular_price, 0, ',', ' ') : number_format($regular_price, 2, ',', ' ');
+        $sale_price = floor($sale_price) == $sale_price ? number_format($sale_price, 0, ',', ' ') : number_format($sale_price, 2, ',', ' ');
+
         // Формируем HTML с нужными классами
         $price_html = '<span class="price">
-            <del aria-hidden="true"><span class="woocommerce-Price-amount amount price__old"><bdi>' . number_format($regular_price, 2, ',', ' ') . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></bdi></span></del>
-            <ins aria-hidden="true"><span class="woocommerce-Price-amount amount price__new"><bdi>' . number_format($sale_price, 2, ',', ' ') . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></bdi></span></ins>
+            <del aria-hidden="true"><span class="woocommerce-Price-amount amount price__old"><bdi>' . $regular_price . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></bdi></span></del>
+            <ins aria-hidden="true"><span class="woocommerce-Price-amount amount price__new"><bdi>' . $sale_price . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></bdi></span></ins>
         </span>';
     }
 
     return $price_html;
 }, 10, 2);
+
+
+
+//Отключение знаков после запятой в цене товара
+add_filter('woocommerce_price_trim_zeros', 'remove_decimal_points');
+function remove_decimal_points($trim) {
+    return true;
+}
 
 //TODO:Подумай за оптимизацию картинок для мобилки. Восстанови wp_calculate_image_srcset_meta
 
