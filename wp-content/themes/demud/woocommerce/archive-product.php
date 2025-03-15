@@ -19,38 +19,49 @@ defined('ABSPATH') || exit;
 
 get_header('shop');
 ?>
+
+<?php
+/**
+ * Hook: woocommerce_before_main_content.
+ *
+ * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+ * @hooked WC_Structured_Data::generate_website_data() - 30
+ */
+do_action('woocommerce_before_main_content');
+?>
+
 <section class="page-header">
     <div class="container page-header__container">
-        <div class="breadcrumbs">
-            <?php
-            /**
-             * Hook: woocommerce_before_main_content.
-             *
-             * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-             * @hooked woocommerce_breadcrumb - 20
-             * @hooked WC_Structured_Data::generate_website_data() - 30
-             */
-            do_action('woocommerce_before_main_content');
-            ?>
-        </div>
+
+        <?php
+        /**
+         * Hook: demud_before_shop_loop_header.
+         * @hooked woocommerce_breadcrumb - 20
+         */
+        do_action('demud_before_shop_loop_header');
+
+        ?>
 
         <?php
         /**
          * Hook: woocommerce_shop_loop_header.
          *
          * @since 8.6.0
-         *
+         * @hooked woocommerce_breadcrumb - 20
          * @hooked woocommerce_product_taxonomy_archive_header - 10
          */
         do_action('woocommerce_shop_loop_header');
 
+        ?>
+                <section class="section catalog">
+        <?php
         if (woocommerce_product_loop()) {
 
             /**
              * Hook: woocommerce_before_shop_loop.
              *
              * @hooked woocommerce_output_all_notices - 10
-             * @hooked woocommerce_result_count - 20
+             * @hooked woocommerce_result_count - 20 - disable in demud/inc/template-functions
              * @hooked woocommerce_catalog_ordering - 30
              */
             do_action('woocommerce_before_shop_loop');
@@ -86,22 +97,20 @@ get_header('shop');
              */
             do_action('woocommerce_no_products_found');
         }
-
-        /**
-         * Hook: woocommerce_after_main_content.
-         *
-         * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-         */
-        do_action('woocommerce_after_main_content');
-
-        /**
-         * Hook: woocommerce_sidebar.
-         *
-         * @hooked woocommerce_get_sidebar - 10
-         */
-        do_action('woocommerce_sidebar');
         ?>
+        </section>
     </div>
 </section>
+<?php
+
+/**
+ * Hook: woocommerce_after_main_content.
+ *
+ * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+ */
+do_action('woocommerce_after_main_content');
+
+?>
+
 <?php get_footer('shop'); ?>
 

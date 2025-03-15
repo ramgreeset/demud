@@ -118,9 +118,17 @@ add_filter( 'wp_calculate_image_srcset_meta', '__return_null' );
 /**
  * Хуки для demud/woocommerce/archive-product-php
  */
-
+//Открепляет счетчик товаров на странице
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 
+//Переопределяем хук хлебных крошек для отображения в актуальном месте на сайте
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+add_action('demud_before_shop_loop_header', 'woocommerce_breadcrumb' , 20);
+
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+
+
+//Вешает кастомный класс breadcrumbs__list на тег <nav> у хлебных крошек
 add_filter('woocommerce_breadcrumb_defaults', function($defaults) {
     $defaults['wrap_before'] = '<nav class="woocommerce-breadcrumb breadcrumbs__list" aria-label="Breadcrumb">';
     return $defaults;
