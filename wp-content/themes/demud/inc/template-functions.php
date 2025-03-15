@@ -59,8 +59,6 @@ register_nav_menus([
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
 
 
-
-
 //Убирает <a> обертку
 remove_action('woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10);
 remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5);
@@ -117,5 +115,15 @@ function remove_decimal_points($trim) {
 add_filter( 'wp_calculate_image_srcset_meta', '__return_null' );
 
 
+/**
+ * Хуки для demud/woocommerce/archive-product-php
+ */
+
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+
+add_filter('woocommerce_breadcrumb_defaults', function($defaults) {
+    $defaults['wrap_before'] = '<nav class="woocommerce-breadcrumb breadcrumbs__list" aria-label="Breadcrumb">';
+    return $defaults;
+});
 
 

@@ -2513,6 +2513,8 @@ if ( ! function_exists( 'woocommerce_breadcrumb' ) ) {
 	 *
 	 * @param array $args Arguments.
 	 */
+
+//    TODO: Переопределить функцию для крошек добавив класс breadcrumbs__list к <nav>
 	function woocommerce_breadcrumb( $args = array() ) {
 		$args = wp_parse_args(
 			$args,
