@@ -33,40 +33,37 @@ do_action('woocommerce_before_main_content');
 <section class="page-header">
     <div class="container page-header__container">
 
-        <?php
-        /**
-         * Hook: demud_before_shop_loop_header.
-         * @hooked woocommerce_breadcrumb - 20
-         */
-        do_action('demud_before_shop_loop_header');
+        <!--        @hooked woocommerce_breadcrumb - 20-->
+        <?php do_action('demud_before_shop_loop_header'); ?>
 
-        ?>
+        <!--        @hooked woocommerce_product_taxonomy_archive_header - 10-->
+        <?php do_action('woocommerce_shop_loop_header'); ?>
+</section>
 
-        <?php
-        /**
-         * Hook: woocommerce_shop_loop_header.
-         *
-         * @since 8.6.0
-         * @hooked woocommerce_breadcrumb - 20
-         * @hooked woocommerce_product_taxonomy_archive_header - 10
-         */
-        do_action('woocommerce_shop_loop_header');
-
-        ?>
-                <section class="section catalog">
+<section class="section catalog">
+    <div class="container">
         <?php
         if (woocommerce_product_loop()) {
-
-            /**
-             * Hook: woocommerce_before_shop_loop.
-             *
-             * @hooked woocommerce_output_all_notices - 10
-             * @hooked woocommerce_result_count - 20 - disable in demud/inc/template-functions
-             * @hooked woocommerce_catalog_ordering - 30
-             */
-            do_action('woocommerce_before_shop_loop');
-
-            woocommerce_product_loop_start();
+            ?>
+            <div class="section__header catalog__controls">
+                <div class="input js-input">
+                    <div class="input__inner" tabindex="-1">
+                        <svg class="input__icon icon">
+                            <use xlink:href="/assets/sprite.svg#magnifying-glass"></use>
+                        </svg>
+                        <input class="input__field" type="search" name="search" placeholder="Введите текст"
+                               tabindex="0">
+                    </div>
+                </div>
+                <div class="select">
+                    <!--                            @hooked woocommerce_output_all_notices - 10 disable in demud/inc/template-functions-->
+                    <!--                            @hooked woocommerce_result_count - 20 - disable in demud/inc/template-functions-->
+                    <!--                            @hooked woocommerce_catalog_ordering - 30-->
+                    <?php do_action('woocommerce_before_shop_loop'); ?>
+                </div>
+            </div>
+            <?php woocommerce_product_loop_start(); ?>
+            <?php
 
             if (wc_get_loop_prop('total')) {
                 while (have_posts()) {
@@ -80,15 +77,11 @@ do_action('woocommerce_before_main_content');
                     wc_get_template_part('content', 'product');
                 }
             }
+            ?>
 
-            woocommerce_product_loop_end();
-
-            /**
-             * Hook: woocommerce_after_shop_loop.
-             *
-             * @hooked woocommerce_pagination - 10
-             */
-            do_action('woocommerce_after_shop_loop');
+            <?php woocommerce_product_loop_end(); ?>
+            <!--                    @hooked woocommerce_pagination - 10-->
+            <?php do_action('woocommerce_after_shop_loop');
         } else {
             /**
              * Hook: woocommerce_no_products_found.
@@ -98,9 +91,10 @@ do_action('woocommerce_before_main_content');
             do_action('woocommerce_no_products_found');
         }
         ?>
-        </section>
     </div>
+
 </section>
+
 <section class="section faq">
     <div class="container">
         <div class="section__header">
