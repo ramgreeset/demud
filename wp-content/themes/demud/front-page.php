@@ -63,12 +63,12 @@ get_header();
         <div class="container">
             <div class="section__header">
                 <h2 class="section__title">Популярное</h2>
-                <button class="button button--link">
+                <a href="<?php echo wc_get_page_permalink( 'shop' )?>" class="button button--link">
                     Все товары
                     <svg class="section__icon icon">
                         <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#arrow-right"></use>
                     </svg>
-                </button>
+                </a>
             </div>
             <div>
                 <?php echo do_shortcode('[featured_products limit="4"]')?>
@@ -80,12 +80,12 @@ get_header();
         <div class="container">
             <div class="section__header">
                 <h2 class="section__title">Новости</h2>
-                <button class="button button--link">
+                <a href="<?php echo home_url('/news/')?>" class="button button--link">
                     Все новости
                     <svg class="section__icon icon">
                         <use href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#arrow-right"></use>
                     </svg>
-                </button>
+                </a>
             </div>
             <div class="section__grid">
                 <div class="news-card">

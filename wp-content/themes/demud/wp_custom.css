@@ -1,3 +1,4 @@
+
 .page-numbers {
     --size: 24px;
     --color: var(--color-base-900);
@@ -15,3 +16,23 @@
 .current {
     color: #b3b3b3;
 }
+/*Поисковик*/
+.aws-container{
+    border: 1px solid #e6e6e6;
+}
+.aws-container .aws-search-form {
+height: 100%;
+}
+.aws-container .aws-search-field {
+    font-size: 14px;
+    padding: 8px 0px;
+    border: none;
+}
+.aws-container .aws-search-form .aws-form-btn {
+    background: #fff;
+    border: none;
+}
+.aws-container .aws-search-form .aws-search-btn_icon {
+    fill: #e6e6e6;
+}
+

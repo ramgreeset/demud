@@ -46,15 +46,7 @@ do_action('woocommerce_before_main_content');
         if (woocommerce_product_loop()) {
             ?>
             <div class="section__header catalog__controls">
-                <div class="input js-input">
-                    <div class="input__inner" tabindex="-1">
-                        <svg class="input__icon icon">
-                            <use xlink:href="/assets/sprite.svg#magnifying-glass"></use>
-                        </svg>
-                        <input class="input__field" type="search" name="search" placeholder="Введите текст"
-                               tabindex="0">
-                    </div>
-                </div>
+                <?php aws_get_search_form( true ); ?>
                 <div class="select">
                     <!--                            @hooked woocommerce_output_all_notices - 10 disable in demud/inc/template-functions-->
                     <!--                            @hooked woocommerce_result_count - 20 - disable in demud/inc/template-functions-->
