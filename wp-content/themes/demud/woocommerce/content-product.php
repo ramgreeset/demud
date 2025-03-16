@@ -60,7 +60,7 @@ if (!is_a($product, WC_Product::class) || !$product->is_visible()) {
         do_action('woocommerce_shop_loop_item_title');
         do_action('demud_close_link');
         ?>
-        <p class="product-card__description"><?php echo wp_trim_words(get_the_excerpt(), 10); ?></p>
+        <p class="product-card__description"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
 
     </div> <!--product-card__body-->
 

@@ -1,0 +1,17 @@
+.page-numbers {
+    --size: 24px;
+    --color: var(--color-base-900);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--size);
+    min-height: var(--size);
+    color: var(--color);
+    text-decoration: none;
+    transition: color var(--transition-base), background-color var(--transition-base);
+}
+
+.current {
+    color: #b3b3b3;
+}

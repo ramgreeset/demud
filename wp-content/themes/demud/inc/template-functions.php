@@ -141,4 +141,10 @@ add_filter('woocommerce_breadcrumb_defaults', function($defaults) {
     return $defaults;
 });
 
+//Меняем текст в фильтрации списка на странице магазина
+function custom_woocommerce_catalog_orderby( $options ) {
+    $options['menu_order'] = 'По умолчанию'; // Изменяем "Default" на "По умолчанию"
+    return $options;
+}
+add_filter( 'woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby' );
 
