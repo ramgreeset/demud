@@ -158,6 +158,12 @@ function custom_wc_product_image_class( $html, $post_id ) {
     return $html;
 }
 
+//Добавляет класс swiper-slide к фото на странице деталки
+add_filter( 'woocommerce_single_product_image_thumbnail_html', function( $html, $attachment_id ) {
+    // Добавляем класс `swiper-slide` в div
+    $html = str_replace( 'class="woocommerce-product-gallery__image"', 'class="woocommerce-product-gallery__image swiper-slide"', $html );
+    return $html;
+}, 10, 2 );
 
 @include_once('hooks/custom-content-single-products.php');
 

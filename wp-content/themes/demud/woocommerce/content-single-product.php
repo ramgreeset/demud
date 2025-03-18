@@ -36,33 +36,23 @@ do_action('woocommerce_before_single_product');
         //@hooked woocommerce_breadcrumb - 20
         do_action('demud_before_shop_loop_header');
         ?>
+
         <div class="product-detail__grid">
             <div class="product-detail__gallery">
                 <div class="swiper product-detail__slider js-product-slider">
+
+
+
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/product.png" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/hero.png" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/new.png" alt="">
-                        </div>
+                        <?php wc_get_template('single-product/product-thumbnails.php') ?>
+
                     </div>
                 </div>
 
                 <div class="swiper product-detail__thumbs js-product-thumbs">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/product.png" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/hero.png" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/new.png" alt="">
-                        </div>
+                        <?php wc_get_template('single-product/product-thumbnails.php') ?>
+
                     </div>
                 </div>
             </div>
