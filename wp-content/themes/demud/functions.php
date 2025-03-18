@@ -151,11 +151,26 @@ add_action('widgets_init', 'demud_widgets_init');
  */
 function demud_scripts()
 {
+
+
+
     wp_enqueue_style('demud-style', get_stylesheet_uri(), array(), _S_VERSION);
     wp_style_add_data('demud-style', 'rtl', 'replace');
 
+    // Подключаем стили Swiper
+    wp_enqueue_style('swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+    // Подключаем скрипт Swiper
+    wp_enqueue_script('swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
+
     wp_enqueue_script('demud-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
     wp_enqueue_script('demud-main-js', get_template_directory_uri() . '/js/main.js', array(), _S_VERSION, true);
+
+
+
+
+
+    add_action('wp_enqueue_scripts', 'enqueue_swiper_scripts');
+
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');

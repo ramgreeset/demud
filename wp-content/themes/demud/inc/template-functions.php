@@ -125,6 +125,9 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 add_action('demud_before_shop_loop_header', 'woocommerce_breadcrumb' , 20);
 
+remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
+
+
 //Открепляет фильтры
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 add_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering' , 30);
@@ -147,4 +150,14 @@ function custom_woocommerce_catalog_orderby( $options ) {
     return $options;
 }
 add_filter( 'woocommerce_catalog_orderby', 'custom_woocommerce_catalog_orderby' );
+
+add_filter( 'woocommerce_single_product_image_html', 'custom_wc_product_image_class', 10, 2 );
+
+function custom_wc_product_image_class( $html, $post_id ) {
+    $html = str_replace( '<a href=', '<a class="custom-class" href=', $html );
+    return $html;
+}
+
+
+@include_once('hooks/custom-content-single-products.php');
 
