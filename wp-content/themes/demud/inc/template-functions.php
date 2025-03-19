@@ -173,5 +173,21 @@ function disable_woocommerce_image_sizes() {
 }
 add_action('init', 'disable_woocommerce_image_sizes');
 
+
+//Переопределяем классы и стили для рейтинга
+add_filter( 'woocommerce_product_get_rating_html', function( $html, $rating, $count ) {
+    if ( $rating > 0 ) {
+        $label = $rating;
+        $html  = '<span class="rating__count">' . esc_html( $label ) . '</span>';
+    }
+    return $html;
+}, 10, 3 );
+
+//Добавление классов к инпуту в деталке для работы счетчика
+add_filter( 'woocommerce_quantity_input_args', function( $args, $product ) {
+    $args['classes'] = array_merge( $args['classes'], ['input-number__field', 'js-input-field'] );
+    return $args;
+}, 10, 2 );
+
 @include_once('hooks/custom-content-single-products.php');
 

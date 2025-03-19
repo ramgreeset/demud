@@ -18,6 +18,8 @@ add_action('demud_show_product_title', 'woocommerce_template_single_title', 5);
 add_action('demud_show_single_meta', 'woocommerce_template_single_meta', 40);
 
 add_action('demud_show_single_rating', 'woocommerce_template_single_rating', 10);
+add_action('demud_show_single_price', 'woocommerce_template_single_price', 10);
+add_action('demud_show_single_add_to_cart', 'woocommerce_template_single_add_to_cart', 30);
 
 
 //Отключение табов "Описание, "детали", "Отзывы"

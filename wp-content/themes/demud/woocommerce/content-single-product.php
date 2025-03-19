@@ -53,86 +53,67 @@ do_action('woocommerce_before_single_product');
                 </div>
             </div>
             <div>
-            <div class="product-detail__detail">
-                <div>
-                    <?php do_action('demud_show_product_title'); ?>
-                    <?php wc_get_template('single-product/tabs/description.php') ?>
+                <div class="product-detail__detail">
+                    <div>
+                        <?php do_action('demud_show_product_title'); ?>
+                        <?php wc_get_template('single-product/tabs/description.php') ?>
 
-                </div>
+                    </div>
 
-                <?php
-                global $product;
+                    <?php
+                    global $product;
 
-                $attributes = $product->get_attributes();
+                    $attributes = $product->get_attributes();
 
-                if ( ! empty( $attributes ) ) {
-                    echo '<ul class="params">';
-                    foreach ( $attributes as $attribute ) {
-                        echo '<li class="params__item"><span class="params__prop">' . wc_attribute_label($attribute->get_name()) . '</span><span class="params__value">' . implode(', ', $attribute->get_options()) . '</span></li>';
+                    if (!empty($attributes)) {
+                        echo '<ul class="params">';
+                        foreach ($attributes as $attribute) {
+                            echo '<li class="params__item"><span class="params__prop">' . wc_attribute_label($attribute->get_name()) . '</span><span class="params__value">' . implode(', ', $attribute->get_options()) . '</span></li>';
+                        }
+                        echo '</ul>';
                     }
-                    echo '</ul>';
-                }
-                do_action('demud_show_single_meta');
+                    do_action('demud_show_single_meta');
 
-                ?>
+                    ?>
 
-                <div class="product-detail__info">
-                    <div class="rating">
-                        <?php do_action('demud_show_single_rating');?>
-                        <span class="rating__count">3.5</span>
-                        <ul class="rating__list">
-                            <li class="rating__item">
-                                <svg class="rating__icon icon">
-                                    <use xlink:href="/assets/sprite.svg#star-fill"></use>
-                                </svg>
-                            </li>
-                            <li class="rating__item">
-                                <svg class="rating__icon icon">
-                                    <use xlink:href="/assets/sprite.svg#star-fill"></use>
-                                </svg>
-                            </li>
-                            <li class="rating__item">
-                                <svg class="rating__icon icon">
-                                    <use xlink:href="/assets/sprite.svg#star-fill"></use>
-                                </svg>
-                            </li>
-                            <li class="rating__item">
-                                <svg class="rating__icon icon">
-                                    <use xlink:href="/assets/sprite.svg#star-half-fill"></use>
-                                </svg>
-                            </li>
-                            <li class="rating__item">
-                                <svg class="rating__icon icon">
-                                    <use xlink:href="/assets/sprite.svg#star"></use>
-                                </svg>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="price">
-                        <span class="price__old">2000₽</span>
-                        <span class="price__new">1500₽</span>
-                    </div>
-                </div>
+                    <div class="product-detail__info">
 
-                <div class="product-detail__add">
-                    <div class="input-number js-input-number">
-                        <div class="input-number__inner">
-                            <button class="input-number__btn js-input-decrement">
-                                <svg class="input-number__icon icon">
-                                    <use xlink:href="/assets/sprite.svg#minus"></use>
-                                </svg>
-                            </button>
-                            <input class="input-number__field js-input-field" name="count" type="number" value="1"/>
-                            <button class="input-number__btn js-input-increment">
-                                <svg class="input-number__icon icon">
-                                    <use xlink:href="/assets/sprite.svg#plus"></use>
-                                </svg>
-                            </button>
+                        <div class="rating">
+                            <?php do_action('demud_show_single_rating'); ?>
+
+                            <ul class="rating__list">
+                                <li class="rating__item">
+                                    <svg class="rating__icon icon">
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#star-fill"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg class="rating__icon icon">
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#star-fill"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg class="rating__icon icon">
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#star-fill"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg class="rating__icon icon">
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#star-half-fill"></use>
+                                    </svg>
+                                </li>
+                                <li class="rating__item">
+                                    <svg class="rating__icon icon">
+                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#star"></use>
+                                    </svg>
+                                </li>
+                            </ul>
                         </div>
+                        <?php do_action('demud_show_single_price'); ?>
+
                     </div>
-                    <button class="button">Добавить в корзину</button>
+                    <?php do_action('demud_show_single_add_to_cart'); ?>
                 </div>
-            </div>
             </div>
         </div>
 

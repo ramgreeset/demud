@@ -35,4 +35,7 @@ height: 100%;
 .aws-container .aws-search-form .aws-search-btn_icon {
     fill: #e6e6e6;
 }
+.input-text{
+    text-align: center;
+}
 
