@@ -165,5 +165,13 @@ add_filter( 'woocommerce_single_product_image_thumbnail_html', function( $html, 
     return $html;
 }, 10, 2 );
 
+//Убирает нарезку изображений по размерам
+function disable_woocommerce_image_sizes() {
+    remove_image_size('woocommerce_thumbnail'); // Размер для каталога (300x300)
+    remove_image_size('woocommerce_single'); // Размер для страницы товара (600x600)
+    remove_image_size('woocommerce_gallery_thumbnail'); // Миниатюра галереи (100x100)
+}
+add_action('init', 'disable_woocommerce_image_sizes');
+
 @include_once('hooks/custom-content-single-products.php');
 

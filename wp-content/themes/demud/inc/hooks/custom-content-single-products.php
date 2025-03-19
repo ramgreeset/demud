@@ -15,6 +15,10 @@ remove_action('woocommerce_single_product_summary', 'generate_product_data', 60)
 add_action('demud_show_product_images', 'woocommerce_show_product_images', 20);
 add_action('demud_show_product_title', 'woocommerce_template_single_title', 5);
 
+add_action('demud_show_single_meta', 'woocommerce_template_single_meta', 40);
+
+add_action('demud_show_single_rating', 'woocommerce_template_single_rating', 10);
+
 
 //Отключение табов "Описание, "детали", "Отзывы"
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);

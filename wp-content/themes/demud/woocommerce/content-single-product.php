@@ -40,9 +40,6 @@ do_action('woocommerce_before_single_product');
         <div class="product-detail__grid">
             <div class="product-detail__gallery">
                 <div class="swiper product-detail__slider js-product-slider">
-
-
-
                     <div class="swiper-wrapper">
                         <?php wc_get_template('single-product/product-thumbnails.php') ?>
 
@@ -52,7 +49,6 @@ do_action('woocommerce_before_single_product');
                 <div class="swiper product-detail__thumbs js-product-thumbs">
                     <div class="swiper-wrapper">
                         <?php wc_get_template('single-product/product-thumbnails.php') ?>
-
                     </div>
                 </div>
             </div>
@@ -61,29 +57,28 @@ do_action('woocommerce_before_single_product');
                 <div>
                     <?php do_action('demud_show_product_title'); ?>
                     <?php wc_get_template('single-product/tabs/description.php') ?>
+
                 </div>
 
-                <ul class="params">
-                    <li class="params__item">
-                        <span class="params__prop">Материал</span>
-                        <span class="params__value">Гипс</span>
-                    </li>
-                    <li class="params__item">
-                        <span class="params__prop">Цвет</span>
-                        <span class="params__value">Белый</span>
-                    </li>
-                    <li class="params__item">
-                        <span class="params__prop">Артикул</span>
-                        <span class="params__value">24489436</span>
-                    </li>
-                    <li class="params__item">
-                        <span class="params__prop">Категория</span>
-                        <span class="params__value">Подставки для благовоний</span>
-                    </li>
-                </ul>
+                <?php
+                global $product;
+
+                $attributes = $product->get_attributes();
+
+                if ( ! empty( $attributes ) ) {
+                    echo '<ul class="params">';
+                    foreach ( $attributes as $attribute ) {
+                        echo '<li class="params__item"><span class="params__prop">' . wc_attribute_label($attribute->get_name()) . '</span><span class="params__value">' . implode(', ', $attribute->get_options()) . '</span></li>';
+                    }
+                    echo '</ul>';
+                }
+                do_action('demud_show_single_meta');
+
+                ?>
 
                 <div class="product-detail__info">
                     <div class="rating">
+                        <?php do_action('demud_show_single_rating');?>
                         <span class="rating__count">3.5</span>
                         <ul class="rating__list">
                             <li class="rating__item">
