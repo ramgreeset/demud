@@ -23,7 +23,7 @@ get_header('shop'); ?>
 
     <section class="page-header">
         <div class="container page-header__container">
-
+            <?php do_action('demud_before_shop_loop_header'); ?>
         </div>
     </section>
     <section class="section product-detail">
@@ -190,42 +190,7 @@ get_header('shop'); ?>
             </div>
         </div>
     </section>
-    <section class="main-contacts">
-        <div class="container main-contacts__container">
-            <div>
-                <h2>Контакты</h2>
-                <ul class="main-contacts__list">
-                    <li class="main-contacts__item">
-                        <svg class="main-contacts__item-icon icon">
-                            <use href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#map-pin"></use>
-                        </svg>
-                        <div class="main-contacts__item-content">
-                            <span class="title-h4">Адрес</span>
-                            г. Москва, м. Котельники
-                        </div>
-                    </li>
-                    <li class="main-contacts__item">
-                        <svg class="main-contacts__item-icon icon">
-                            <use href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#phone"></use>
-                        </svg>
-                        <div class="main-contacts__item-content">
-                            <span class="title-h4">Телефон</span>
-                            <a href="tel:+7(918)335-03-07">+7(918)335-03-07</a>
-                        </div>
-                    </li>
-                    <li class="main-contacts__item">
-                        <svg class="main-contacts__item-icon icon">
-                            <use href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#envelope"></use>
-                        </svg>
-                        <div class="main-contacts__item-content">
-                            <span class="title-h4">Email</span>
-                            <a href="mailto:demud.box@gmail.com">demud.box@gmail.com</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+
 
 <?php
 get_footer('shop');

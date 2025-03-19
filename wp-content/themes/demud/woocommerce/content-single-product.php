@@ -27,15 +27,14 @@ global $product;
 do_action('woocommerce_before_single_product');
 
 ?>
+
+
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
+
 
     <?php do_action('woocommerce_before_single_product_summary'); ?>
 
     <div class="summary entry-summary">
-        <?php
-        //@hooked woocommerce_breadcrumb - 20
-        do_action('demud_before_shop_loop_header');
-        ?>
 
         <div class="product-detail__grid">
             <div class="product-detail__gallery">

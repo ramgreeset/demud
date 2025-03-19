@@ -189,5 +189,7 @@ add_filter( 'woocommerce_quantity_input_args', function( $args, $product ) {
     return $args;
 }, 10, 2 );
 
+
+
 @include_once('hooks/custom-content-single-products.php');
 

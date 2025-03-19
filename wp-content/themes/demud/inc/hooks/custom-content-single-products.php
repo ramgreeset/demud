@@ -12,6 +12,7 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
 remove_action('woocommerce_single_product_summary', 'generate_product_data', 60);
 
+
 add_action('demud_show_product_images', 'woocommerce_show_product_images', 20);
 add_action('demud_show_product_title', 'woocommerce_template_single_title', 5);
 
@@ -24,6 +25,14 @@ add_action('demud_show_single_add_to_cart', 'woocommerce_template_single_add_to_
 
 //Отключение табов "Описание, "детали", "Отзывы"
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+
+//Удаление вывода сообщений о добавлении товара в корзину с ссылкой на переход к корзине
+add_filter('wc_add_to_cart_message_html', '__return_null');
+
+//Редирект в корзину после нажатия на кнопку "В корзину"
+add_filter('woocommerce_add_to_cart_redirect', function($url) {
+    return wc_get_cart_url(); // Перенаправление в корзину
+});
 
 
 
