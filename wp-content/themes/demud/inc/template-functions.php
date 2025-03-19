@@ -136,8 +136,8 @@ add_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering' , 30);
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
 
 
-
-
+//todo: В функции woocommerce_template_loop_product_link_open добавь класс product-card__header через фильтры а не правками в кор
+//todo: Найти и переопределить ins для карточек товара
 
 //Вешает кастомный класс breadcrumbs__list на тег <nav> у хлебных крошек
 add_filter('woocommerce_breadcrumb_defaults', function($defaults) {

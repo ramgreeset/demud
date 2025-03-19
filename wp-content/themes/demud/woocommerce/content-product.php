@@ -63,17 +63,17 @@ if (!is_a($product, WC_Product::class) || !$product->is_visible()) {
         <p class="product-card__description"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
 
     </div> <!--product-card__body-->
+    <?php
+    //        price
+    /**
+     * Hook: woocommerce_after_shop_loop_item_title.
+     *
+     * @hooked woocommerce_template_loop_rating - 5 - disable in demud/inc/template-function
+     * @hooked woocommerce_template_loop_price - 10
+     */
+    do_action('woocommerce_after_shop_loop_item_title'); ?>
 
     <div class="product-card__footer">
-        <?php
-//        price
-        /**
-         * Hook: woocommerce_after_shop_loop_item_title.
-         *
-         * @hooked woocommerce_template_loop_rating - 5 - disable in demud/inc/template-function
-         * @hooked woocommerce_template_loop_price - 10
-         */
-        do_action('woocommerce_after_shop_loop_item_title'); ?>
 
         <?php
 //        add-to-card

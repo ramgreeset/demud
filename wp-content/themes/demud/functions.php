@@ -154,6 +154,7 @@ function demud_scripts()
 
     wp_enqueue_style('demud-style', get_stylesheet_uri(), array(), _S_VERSION);
     wp_style_add_data('demud-style', 'rtl', 'replace');
+    wp_enqueue_style('wp-custom', get_stylesheet_directory_uri() . '/wp_custom.css', [], filemtime(get_stylesheet_directory() . '/wp_custom.css'));
 
     // Подключаем стили Swiper
     wp_enqueue_style('swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
