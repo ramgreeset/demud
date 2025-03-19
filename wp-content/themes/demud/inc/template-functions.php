@@ -52,6 +52,7 @@ add_theme_support('menus');
 register_nav_menus([
     'header-menu' => esc_html__('Header Menu', 'demud'),
     'company-menu' => esc_html__('Footer Company Menu', 'demud'),
+    'services-menu' => esc_html__('Footer Services Menu', 'demud'),
     'document-menu' => esc_html__('Footer Document Menu', 'demud'),
 ]);
 

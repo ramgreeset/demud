@@ -28,9 +28,12 @@
             <div class="header__buttons">
                 <button class="header__button button button--icon">
                     <svg class="icon">
+                        <?php wp_register()?>
+
                         <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#user"></use>
                     </svg>
                 </button>
+
 
                 <button class="header__button button button--icon">
                     <svg class="icon">
