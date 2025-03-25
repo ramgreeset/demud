@@ -16,44 +16,62 @@ get_header();
 ?>
 
     <main class="main">
-        <!--    Топ-->
-        <section class="hero">
-            <div class="container hero__container">
-                <div class="hero__item hero__item--light">
-                    <img class="hero__img" src="<?php echo get_template_directory_uri(); ?>/assets/hero.png" alt="">
-                </div>
-                <div class="hero__item hero__item--dark">
-                    <div class="hero__content">
-                        <h1 class="hero__title">Декор из гипса, <br> который вдохновляет</h1>
-                        <p class="hero__description">Создаем стильные изделия, идеально дополняющие ваш интерьер.</p>
-                    </div>
+<!--    Топ-->
+    <section class="hero">
+        <div class="container hero__container">
+            <div class="hero__item hero__item--light">
+                <img class="hero__img" src="<?php echo get_template_directory_uri();?>/assets/hero.png" alt="">
+            </div>
+            <div class="hero__item hero__item--dark">
+                <div class="hero__content">
+                    <h1 class="hero__title">Декор из гипса, <br> который вдохновляет</h1>
+                    <p class="hero__description">Создаем стильные изделия, идеально дополняющие ваш интерьер.</p>
                 </div>
             </div>
-        </section>
-        <!--    ТоварыСтарые-->
+        </div>
+    </section>
+        <!--    Каталог-->
+
         <section class="section">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Популярное</h2>
-                    <a href="<?php echo wc_get_page_permalink('shop') ?>" class="button button--link">
+                    <h2 class="section__title">Каталог</h2>
+                    <a href="" class="button button--link">
                         Все товары
                         <svg class="section__icon icon">
                             <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#arrow-right"></use>
                         </svg>
                     </a>
                 </div>
-                <?php echo do_shortcode('[featured_products limit="4"]') ?>
+                <?php echo do_shortcode('[product_categories number="8" parent="0"]')?>
 
             </div>
         </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Популярное</h2>
+                <a href="<?php echo wc_get_page_permalink( 'shop' )?>" class="button button--link">
+                    Все товары
+                    <svg class="section__icon icon">
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#arrow-right"></use>
+                    </svg>
+                </a>
+            </div>
+            <div>
+                <?php echo do_shortcode('[featured_products limit="4"]')?>
+            </div>
+        </div>
+    </section>
         <!--    Популярные-->
         <section class="section js-main-products">
             <div class="container">
                 <div class="section__header">
                     <h2 class="section__title">Популярное</h2>
-                </div>
+            </div>
         </section>
-        <!--    Популярные-->
+<!--    Популярные-->
         <section class="section js-main-products">
             <div class="container">
                 <div class="section__header">
@@ -70,311 +88,14 @@ get_header();
                                 <use xlink:href="/assets/sprite.svg#caret-right"></use>
                             </svg>
                         </button>
-                    </div>
-                </div>
+                    </div>    </div>
                 <div class="swiper js-main-products-slider">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <a class="product-card__header" href="#">
-                                    <img class="product-card__img" src="/assets/hero.png" alt="">
-                                    <span class="product-card__badge badge">Sale</span>
-                                </a>
-                                <div class="product-card__body">
-                                    <a href="">
-                                        <h3 class="product-card__title">
-                                            Euphoria
-                                        </h3>
-                                    </a>
-                                    <p class="product-card__description">
-                                        Подставка для благовоний
-                                    </p>
-                                    <div class="price">
-                                        <span class="price__old">2000₽</span>
-                                        <span class="price__new">1500₽</span>
-                                    </div>
-                                </div>
-                                <div class="product-card__footer">
-                                    <button class="product-card__button button">
-                                        В корзину
-                                        <svg class="icon">
-                                            <use xlink:href="/assets/sprite.svg#handbag"></use>
-                                        </svg>
-                                    </button>
-
-                                    <!--    <button class="product-card__button button">-->
-                                    <!--      На заказ-->
-                                    <!--      <svg class="icon">-->
-                                    <!--        <use xlink:href="/assets/sprite.svg#clock"></use>-->
-                                    <!--      </svg>-->
-                                    <!--    </button>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <a class="product-card__header" href="#">
-                                    <img class="product-card__img" src="/assets/hero.png" alt="">
-                                    <span class="product-card__badge badge">Sale</span>
-                                </a>
-                                <div class="product-card__body">
-                                    <a href="">
-                                        <h3 class="product-card__title">
-                                            Euphoria
-                                        </h3>
-                                    </a>
-                                    <p class="product-card__description">
-                                        Подставка для благовоний
-                                    </p>
-                                    <div class="price">
-                                        <span class="price__old">2000₽</span>
-                                        <span class="price__new">1500₽</span>
-                                    </div>
-                                </div>
-                                <div class="product-card__footer">
-                                    <button class="product-card__button button">
-                                        В корзину
-                                        <svg class="icon">
-                                            <use xlink:href="/assets/sprite.svg#handbag"></use>
-                                        </svg>
-                                    </button>
-
-                                    <!--    <button class="product-card__button button">-->
-                                    <!--      На заказ-->
-                                    <!--      <svg class="icon">-->
-                                    <!--        <use xlink:href="/assets/sprite.svg#clock"></use>-->
-                                    <!--      </svg>-->
-                                    <!--    </button>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <a class="product-card__header" href="#">
-                                    <img class="product-card__img" src="/assets/hero.png" alt="">
-                                    <span class="product-card__badge badge">Sale</span>
-                                </a>
-                                <div class="product-card__body">
-                                    <a href="">
-                                        <h3 class="product-card__title">
-                                            Euphoria
-                                        </h3>
-                                    </a>
-                                    <p class="product-card__description">
-                                        Подставка для благовоний
-                                    </p>
-                                    <div class="price">
-                                        <span class="price__old">2000₽</span>
-                                        <span class="price__new">1500₽</span>
-                                    </div>
-                                </div>
-                                <div class="product-card__footer">
-                                    <button class="product-card__button button">
-                                        В корзину
-                                        <svg class="icon">
-                                            <use xlink:href="/assets/sprite.svg#handbag"></use>
-                                        </svg>
-                                    </button>
-
-                                    <!--    <button class="product-card__button button">-->
-                                    <!--      На заказ-->
-                                    <!--      <svg class="icon">-->
-                                    <!--        <use xlink:href="/assets/sprite.svg#clock"></use>-->
-                                    <!--      </svg>-->
-                                    <!--    </button>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <a class="product-card__header" href="#">
-                                    <img class="product-card__img" src="/assets/hero.png" alt="">
-                                    <span class="product-card__badge badge">Sale</span>
-                                </a>
-                                <div class="product-card__body">
-                                    <a href="">
-                                        <h3 class="product-card__title">
-                                            Euphoria
-                                        </h3>
-                                    </a>
-                                    <p class="product-card__description">
-                                        Подставка для благовоний
-                                    </p>
-                                    <div class="price">
-                                        <span class="price__old">2000₽</span>
-                                        <span class="price__new">1500₽</span>
-                                    </div>
-                                </div>
-                                <div class="product-card__footer">
-                                    <button class="product-card__button button">
-                                        В корзину
-                                        <svg class="icon">
-                                            <use xlink:href="/assets/sprite.svg#handbag"></use>
-                                        </svg>
-                                    </button>
-
-                                    <!--    <button class="product-card__button button">-->
-                                    <!--      На заказ-->
-                                    <!--      <svg class="icon">-->
-                                    <!--        <use xlink:href="/assets/sprite.svg#clock"></use>-->
-                                    <!--      </svg>-->
-                                    <!--    </button>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <a class="product-card__header" href="#">
-                                    <img class="product-card__img" src="/assets/hero.png" alt="">
-                                    <span class="product-card__badge badge">Sale</span>
-                                </a>
-                                <div class="product-card__body">
-                                    <a href="">
-                                        <h3 class="product-card__title">
-                                            Euphoria
-                                        </h3>
-                                    </a>
-                                    <p class="product-card__description">
-                                        Подставка для благовоний
-                                    </p>
-                                    <div class="price">
-                                        <span class="price__old">2000₽</span>
-                                        <span class="price__new">1500₽</span>
-                                    </div>
-                                </div>
-                                <div class="product-card__footer">
-                                    <button class="product-card__button button">
-                                        В корзину
-                                        <svg class="icon">
-                                            <use xlink:href="/assets/sprite.svg#handbag"></use>
-                                        </svg>
-                                    </button>
-
-                                    <!--    <button class="product-card__button button">-->
-                                    <!--      На заказ-->
-                                    <!--      <svg class="icon">-->
-                                    <!--        <use xlink:href="/assets/sprite.svg#clock"></use>-->
-                                    <!--      </svg>-->
-                                    <!--    </button>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <a class="product-card__header" href="#">
-                                    <img class="product-card__img" src="/assets/hero.png" alt="">
-                                    <span class="product-card__badge badge">Sale</span>
-                                </a>
-                                <div class="product-card__body">
-                                    <a href="">
-                                        <h3 class="product-card__title">
-                                            Euphoria
-                                        </h3>
-                                    </a>
-                                    <p class="product-card__description">
-                                        Подставка для благовоний
-                                    </p>
-                                    <div class="price">
-                                        <span class="price__old">2000₽</span>
-                                        <span class="price__new">1500₽</span>
-                                    </div>
-                                </div>
-                                <div class="product-card__footer">
-                                    <button class="product-card__button button">
-                                        В корзину
-                                        <svg class="icon">
-                                            <use xlink:href="/assets/sprite.svg#handbag"></use>
-                                        </svg>
-                                    </button>
-
-                                    <!--    <button class="product-card__button button">-->
-                                    <!--      На заказ-->
-                                    <!--      <svg class="icon">-->
-                                    <!--        <use xlink:href="/assets/sprite.svg#clock"></use>-->
-                                    <!--      </svg>-->
-                                    <!--    </button>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <a class="product-card__header" href="#">
-                                    <img class="product-card__img" src="/assets/hero.png" alt="">
-                                    <span class="product-card__badge badge">Sale</span>
-                                </a>
-                                <div class="product-card__body">
-                                    <a href="">
-                                        <h3 class="product-card__title">
-                                            Euphoria
-                                        </h3>
-                                    </a>
-                                    <p class="product-card__description">
-                                        Подставка для благовоний
-                                    </p>
-                                    <div class="price">
-                                        <span class="price__old">2000₽</span>
-                                        <span class="price__new">1500₽</span>
-                                    </div>
-                                </div>
-                                <div class="product-card__footer">
-                                    <button class="product-card__button button">
-                                        В корзину
-                                        <svg class="icon">
-                                            <use xlink:href="/assets/sprite.svg#handbag"></use>
-                                        </svg>
-                                    </button>
-
-                                    <!--    <button class="product-card__button button">-->
-                                    <!--      На заказ-->
-                                    <!--      <svg class="icon">-->
-                                    <!--        <use xlink:href="/assets/sprite.svg#clock"></use>-->
-                                    <!--      </svg>-->
-                                    <!--    </button>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="product-card">
-                                <a class="product-card__header" href="#">
-                                    <img class="product-card__img" src="/assets/hero.png" alt="">
-                                    <span class="product-card__badge badge">Sale</span>
-                                </a>
-                                <div class="product-card__body">
-                                    <a href="">
-                                        <h3 class="product-card__title">
-                                            Euphoria
-                                        </h3>
-                                    </a>
-                                    <p class="product-card__description">
-                                        Подставка для благовоний
-                                    </p>
-                                    <div class="price">
-                                        <span class="price__old">2000₽</span>
-                                        <span class="price__new">1500₽</span>
-                                    </div>
-                                </div>
-                                <div class="product-card__footer">
-                                    <button class="product-card__button button">
-                                        В корзину
-                                        <svg class="icon">
-                                            <use xlink:href="/assets/sprite.svg#handbag"></use>
-                                        </svg>
-                                    </button>
-
-                                    <!--    <button class="product-card__button button">-->
-                                    <!--      На заказ-->
-                                    <!--      <svg class="icon">-->
-                                    <!--        <use xlink:href="/assets/sprite.svg#clock"></use>-->
-                                    <!--      </svg>-->
-                                    <!--    </button>-->
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!--    Блог-->
+<!--    Блог-->
         <section class="section">
             <div class="container">
                 <div class="section__header">
@@ -389,8 +110,7 @@ get_header();
                 <div class="grid grid--cols-4">
                     <div class="news-card">
                         <a class="news-card__header" href="">
-                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png"
-                                 alt="">
+                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png" alt="">
                             <span class="news-card__badge badge">New</span>
                         </a>
                         <div class="news-card__body">
@@ -399,26 +119,20 @@ get_header();
                                     <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#calendar"></use>
                                 </svg>
                                 <time datetime="2025-03-13">13 марта 2025</time>
-                            </div>
-                            <a href="">
+                            </div>    <a href="">
                                 <h3 class="news-card__title">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis
-                                    rerum sunt vero.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis rerum sunt vero.
                                 </h3>
                             </a>
                             <p class="news-card__description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque,
-                                distinctio doloremque harum
-                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos
-                                ratione rerum saepe tempore
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque, distinctio doloremque harum
+                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos ratione rerum saepe tempore
                                 tenetur voluptatum!
                             </p>
                         </div>
-                    </div>
-                    <div class="news-card">
+                    </div>      <div class="news-card">
                         <a class="news-card__header" href="">
-                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png"
-                                 alt="">
+                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png" alt="">
                             <span class="news-card__badge badge">New</span>
                         </a>
                         <div class="news-card__body">
@@ -427,26 +141,20 @@ get_header();
                                     <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#calendar"></use>
                                 </svg>
                                 <time datetime="2025-03-13">13 марта 2025</time>
-                            </div>
-                            <a href="">
+                            </div>    <a href="">
                                 <h3 class="news-card__title">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis
-                                    rerum sunt vero.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis rerum sunt vero.
                                 </h3>
                             </a>
                             <p class="news-card__description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque,
-                                distinctio doloremque harum
-                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos
-                                ratione rerum saepe tempore
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque, distinctio doloremque harum
+                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos ratione rerum saepe tempore
                                 tenetur voluptatum!
                             </p>
                         </div>
-                    </div>
-                    <div class="news-card">
+                    </div>      <div class="news-card">
                         <a class="news-card__header" href="">
-                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png"
-                                 alt="">
+                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png" alt="">
                             <span class="news-card__badge badge">New</span>
                         </a>
                         <div class="news-card__body">
@@ -455,26 +163,20 @@ get_header();
                                     <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#calendar"></use>
                                 </svg>
                                 <time datetime="2025-03-13">13 марта 2025</time>
-                            </div>
-                            <a href="">
+                            </div>    <a href="">
                                 <h3 class="news-card__title">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis
-                                    rerum sunt vero.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis rerum sunt vero.
                                 </h3>
                             </a>
                             <p class="news-card__description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque,
-                                distinctio doloremque harum
-                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos
-                                ratione rerum saepe tempore
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque, distinctio doloremque harum
+                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos ratione rerum saepe tempore
                                 tenetur voluptatum!
                             </p>
                         </div>
-                    </div>
-                    <div class="news-card">
+                    </div>      <div class="news-card">
                         <a class="news-card__header" href="">
-                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png"
-                                 alt="">
+                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png" alt="">
                             <span class="news-card__badge badge">New</span>
                         </a>
                         <div class="news-card__body">
@@ -483,26 +185,21 @@ get_header();
                                     <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#calendar"></use>
                                 </svg>
                                 <time datetime="2025-03-13">13 марта 2025</time>
-                            </div>
-                            <a href="">
+                            </div>    <a href="">
                                 <h3 class="news-card__title">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis
-                                    rerum sunt vero.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis rerum sunt vero.
                                 </h3>
                             </a>
                             <p class="news-card__description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque,
-                                distinctio doloremque harum
-                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos
-                                ratione rerum saepe tempore
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque, distinctio doloremque harum
+                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos ratione rerum saepe tempore
                                 tenetur voluptatum!
                             </p>
                         </div>
-                    </div>
-                </div>
+                    </div>    </div>
             </div>
         </section>
-        <!--    Вопросы-->
+<!--    Вопросы-->
         <section class="section faq">
             <div class="container">
                 <div class="section__header">
@@ -518,8 +215,7 @@ get_header();
                         </div>
                         <div class="accordion__body js-accordion-body">
                             <div class="accordion__content content">
-                                Наш декор изготовлен из высококачественного гипса. Он экологичен, безопасен и
-                                долговечен.
+                                Наш декор изготовлен из высококачественного гипса. Он экологичен, безопасен и долговечен.
                             </div>
                         </div>
                     </div>
@@ -532,8 +228,7 @@ get_header();
                         </div>
                         <div class="accordion__body js-accordion-body">
                             <div class="accordion__content content">
-                                Протирать мягкой сухой или чуть влажной тканью. Не рекомендуется мыть под струей воды,
-                                чтобы избежать
+                                Протирать мягкой сухой или чуть влажной тканью. Не рекомендуется мыть под струей воды, чтобы избежать
                                 повреждений.
                             </div>
                         </div>
@@ -547,8 +242,7 @@ get_header();
                         </div>
                         <div class="accordion__body js-accordion-body">
                             <div class="accordion__content content">
-                                Да, мы можем покрасить гипсовые изделия в разные цвета. Свяжитесь с нами, чтобы обсудить
-                                детали.
+                                Да, мы можем покрасить гипсовые изделия в разные цвета. Свяжитесь с нами, чтобы обсудить детали.
                             </div>
                         </div>
                     </div>
@@ -574,8 +268,7 @@ get_header();
                         </div>
                         <div class="accordion__body js-accordion-body">
                             <div class="accordion__content content">
-                                Мы тщательно упаковываем каждый заказ в плотную упаковку с защитой, чтобы он доехал в
-                                целости.
+                                Мы тщательно упаковываем каждый заказ в плотную упаковку с защитой, чтобы он доехал в целости.
                             </div>
                         </div>
                     </div>
@@ -588,8 +281,7 @@ get_header();
                         </div>
                         <div class="accordion__body js-accordion-body">
                             <div class="accordion__content content">
-                                Да, мы можем изготовить декор по вашему эскизу или пожеланиям. Сроки и стоимость
-                                обсуждаются индивидуально.
+                                Да, мы можем изготовить декор по вашему эскизу или пожеланиям. Сроки и стоимость обсуждаются индивидуально.
                             </div>
                         </div>
                     </div>
@@ -615,8 +307,7 @@ get_header();
                         </div>
                         <div class="accordion__body js-accordion-body">
                             <div class="accordion__content content">
-                                Конечно! Мы сотрудничаем с дизайнерами, магазинами и студиями. Свяжитесь с нами для
-                                расчета стоимости.
+                                Конечно! Мы сотрудничаем с дизайнерами, магазинами и студиями. Свяжитесь с нами для расчета стоимости.
                             </div>
                         </div>
                     </div>
