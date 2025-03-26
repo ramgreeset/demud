@@ -38,11 +38,10 @@ do_action('woocommerce_before_single_product');
         <div class="grid grid--cols-2">
             <div class="product-detail__gallery">
                 <div class="swiper product-detail__slider js-product-slider">
-                    <?php wc_get_template( 'loop/sale-flash.php' );?>
+                    <?php wc_get_template('loop/sale-flash.php'); ?>
 
                     <div class="swiper-wrapper">
                         <?php wc_get_template('single-product/product-thumbnails.php') ?>
-
                     </div>
                 </div>
 

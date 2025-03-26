@@ -30,6 +30,15 @@ $attachment_ids = $product->get_gallery_image_ids();
 
 <?php
     if ($attachment_ids && $product->get_image_id()) {
+        $video_url = get_field('product_video'); // Получаем URL видео из ACF
+        if ($video_url): ?>
+            <div class="woocommerce-product-gallery__image swiper-slide">
+                <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+                    <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+        <?php endif;
         foreach ($attachment_ids as $key => $attachment_id) {
             /**
              * Filter product image thumbnail HTML string.
@@ -40,7 +49,6 @@ $attachment_ids = $product->get_gallery_image_ids();
              *
              */
             echo apply_filters('woocommerce_single_product_image_thumbnail_html', wc_get_gallery_image_html($attachment_id, false, $key), $attachment_id); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
         }
     }
     ?>

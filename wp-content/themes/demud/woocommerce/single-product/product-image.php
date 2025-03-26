@@ -45,7 +45,7 @@ $wrapper_classes   = apply_filters(
             $html = wc_get_gallery_image_html( $post_thumbnail_id, true );
 
             // Добавляем класс "custom-class" в тег <a>
-            $html = str_replace('<a href=', '<a class="custom-class" href=', $html);
+//            $html = str_replace('<a href=', '<a class="custom-class" href=', $html);
         } else {
             $wrapper_classname = $product->is_type( ProductType::VARIABLE ) && ! empty( $product->get_available_variations( 'image' ) ) ?
                 'woocommerce-product-gallery__image woocommerce-product-gallery__image--placeholder' :

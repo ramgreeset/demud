@@ -229,15 +229,5 @@ function remove_woocommerce_category_count() {
 add_filter( 'woocommerce_subcategory_count_html', 'remove_woocommerce_category_count' );
 
 
-add_filter( 'wc_price', 'remove_bdi_from_wc_price', 10, 5 );
-
-function remove_bdi_from_wc_price( $return, $price, $args, $unformatted_price, $original_price ) {
-    // Убираем тег <bdi> из результата функции wc_price
-    $return = str_replace('<bdi>', '', $return); // Убираем открывающий <bdi>
-    $return = str_replace('</bdi>', '', $return); // Убираем закрывающий </bdi>
-    return $return;
-}
-
-
 @include_once('hooks/custom-content-single-products.php');
 
