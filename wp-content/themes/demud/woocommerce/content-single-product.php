@@ -31,14 +31,15 @@ do_action('woocommerce_before_single_product');
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
 
-
     <?php do_action('woocommerce_before_single_product_summary'); ?>
 
     <div class="summary entry-summary">
 
-        <div class="product-detail__grid">
+        <div class="grid grid--cols-2">
             <div class="product-detail__gallery">
                 <div class="swiper product-detail__slider js-product-slider">
+                    <?php wc_get_template( 'loop/sale-flash.php' );?>
+
                     <div class="swiper-wrapper">
                         <?php wc_get_template('single-product/product-thumbnails.php') ?>
 
@@ -52,10 +53,11 @@ do_action('woocommerce_before_single_product');
                 </div>
             </div>
             <div>
-                <div class="product-detail__detail">
+                <div class="product-detail__content">
                     <div>
+                        <?php do_action('demud_show_single_meta'); ?>
                         <?php do_action('demud_show_product_title'); ?>
-                        <?php wc_get_template('single-product/tabs/description.php') ?>
+                        <?php wc_get_template('single-product/tabs/description.php'); ?>
 
                     </div>
 
@@ -71,8 +73,6 @@ do_action('woocommerce_before_single_product');
                         }
                         echo '</ul>';
                     }
-                    do_action('demud_show_single_meta');
-
                     ?>
 
                     <div class="product-detail__info">
@@ -109,8 +109,8 @@ do_action('woocommerce_before_single_product');
                             </ul>
                         </div>
                         <?php do_action('demud_show_single_price'); ?>
-
                     </div>
+
                     <?php do_action('demud_show_single_add_to_cart'); ?>
                 </div>
             </div>

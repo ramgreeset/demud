@@ -42,9 +42,11 @@ do_action('woocommerce_before_main_content');
 
 <section class="section catalog">
     <div class="container">
+
         <?php
         if (woocommerce_product_loop()) {
             ?>
+
             <div class="section__header catalog__controls">
                 <?php aws_get_search_form( true ); ?>
                 <div class="select">

@@ -33,7 +33,6 @@ if (!is_a($product, WC_Product::class) || !$product->is_visible()) {
      */
     do_action('woocommerce_before_shop_loop_item'); ?>
 
-
     <?php
     //    img
     /**
@@ -44,11 +43,12 @@ if (!is_a($product, WC_Product::class) || !$product->is_visible()) {
      */
     do_action('demud_open_link');
     the_post_thumbnail('woocommerce_thumbnail', array('class' => 'product-card__img'));
+    wc_get_template( 'loop/sale-flash.php' );
     do_action('woocommerce_before_shop_loop_item_title');
     do_action('demud_close_link');
     ?>
-
     <div class="product-card__body">
+
         <?php
         //    title
         /**

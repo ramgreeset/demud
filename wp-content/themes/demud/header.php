@@ -24,7 +24,12 @@
 <div class="layout">
     <header class="header">
         <div class="container header__container">
-            <a class="logo" href="<?php echo home_url();?>"><?php bloginfo('name');?></a>
+<!--            <a class="logo" href="--><?php //echo home_url();?><!--">--><?php //bloginfo('name');?><!--</a>-->
+            <a class="logo" href="<?php echo home_url();?>">
+                <svg class="logo__icon">
+                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#demud"></use>
+                </svg>
+            </a>
             <div class="header__buttons">
                 <button class="header__button button button--icon">
                     <svg class="icon">

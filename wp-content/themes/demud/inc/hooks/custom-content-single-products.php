@@ -11,6 +11,8 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
 remove_action('woocommerce_single_product_summary', 'generate_product_data', 60);
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
 
 
 add_action('demud_show_product_images', 'woocommerce_show_product_images', 20);
