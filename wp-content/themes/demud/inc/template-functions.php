@@ -96,8 +96,8 @@ add_filter('woocommerce_get_price_html', function ($price_html, $product) {
 
         // Формируем HTML с нужными классами
         $price_html = '<span class="price">
-            <del aria-hidden="true"><span class="woocommerce-Price-amount amount price__old"><bdi>' . $regular_price . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></bdi></span></del>
-            <ins aria-hidden="true"><span class="woocommerce-Price-amount amount price__new"><bdi>' . $sale_price . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></bdi></span></ins>
+           <span class="woocommerce-Price-amount amount price__old">' . $regular_price . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></span>
+           <span class="woocommerce-Price-amount amount price__new">' . $sale_price . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></span>
         </span>';
     }
 
@@ -206,6 +206,7 @@ function woocommerce_template_loop_category_link_open( $category ) {
     echo '<a class="category-card" aria-label="' . sprintf( esc_attr__( 'Visit product category %1$s', 'woocommerce' ), esc_attr( $category_name ) ) . '" href="' . esc_url( get_term_link( $category, 'product_cat' ) ) . '">';
 }
 
+//Меняем тег h2 на h3 в карточке категорий
 function woocommerce_template_loop_category_title( $category ) {
     ?>
     <h3 class="woocommerce-loop-category__title category-card__title">
@@ -226,6 +227,16 @@ function remove_woocommerce_category_count() {
     return '';
 }
 add_filter( 'woocommerce_subcategory_count_html', 'remove_woocommerce_category_count' );
+
+
+add_filter( 'wc_price', 'remove_bdi_from_wc_price', 10, 5 );
+
+function remove_bdi_from_wc_price( $return, $price, $args, $unformatted_price, $original_price ) {
+    // Убираем тег <bdi> из результата функции wc_price
+    $return = str_replace('<bdi>', '', $return); // Убираем открывающий <bdi>
+    $return = str_replace('</bdi>', '', $return); // Убираем закрывающий </bdi>
+    return $return;
+}
 
 
 @include_once('hooks/custom-content-single-products.php');
