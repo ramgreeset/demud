@@ -1,4 +1,5 @@
 <?php
+
 remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flas', 10);
 remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
 
@@ -35,6 +36,7 @@ add_filter('wc_add_to_cart_message_html', '__return_null');
 add_filter('woocommerce_add_to_cart_redirect', function($url) {
     return wc_get_cart_url(); // Перенаправление в корзину
 });
+
 
 
 

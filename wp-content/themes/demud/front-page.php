@@ -48,54 +48,29 @@ get_header();
             </div>
         </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="section__title">Популярное</h2>
-                <a href="<?php echo wc_get_page_permalink( 'shop' )?>" class="button button--link">
-                    Все товары
-                    <svg class="section__icon icon">
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#arrow-right"></use>
-                    </svg>
-                </a>
-            </div>
-            <div>
-                <?php echo do_shortcode('[featured_products limit="4"]')?>
-            </div>
-        </div>
-    </section>
-        <!--    Популярные-->
-        <section class="section">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Популярное</h2>
-                    <a href="<?php echo wc_get_page_permalink( 'shop' )?>" class="button button--link">
-                        Все товары
-                        <svg class="section__icon icon">
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
-                <div>
-                    <?php echo do_shortcode('[featured_products limit="4"]')?>
-                </div>
-            </div>
-        </section>
 
 <!--    Популярные-->
-        <section class="section">
+        <section class="section js-main-products">
             <div class="container">
                 <div class="section__header">
                     <h2 class="section__title">Популярное</h2>
-                    <a href="<?php echo wc_get_page_permalink( 'shop' )?>" class="button button--link">
-                        Все товары
-                        <svg class="section__icon icon">
-                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#arrow-right"></use>
-                        </svg>
-                    </a>
+
+                    <div class="navigation">
+                        <button class="navigation__button button button--icon js-main-products-prev">
+                            <svg class="icon">
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-left"></use>
+                            </svg>
+                        </button>
+                        <button class="navigation__button button button--icon js-main-products-next">
+                            <svg class="icon">
+                                <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-right"></use>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <?php echo do_shortcode('[featured_products limit="4"]')?>
+                <div class="swiper js-main-products-slider">
+                    <div class="swiper-wrapper">
+                            <?php echo do_shortcode('[hit_products]')?>
                 </div>
             </div>
         </section>

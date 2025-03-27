@@ -230,4 +230,5 @@ add_filter( 'woocommerce_subcategory_count_html', 'remove_woocommerce_category_c
 
 
 @include_once('hooks/custom-content-single-products.php');
+@include_once('hooks/custom-shortcode.php');
 
