@@ -50,10 +50,13 @@ do_action('woocommerce_before_main_content');
             <div class="section__header catalog__controls">
                 <?php aws_get_search_form( true ); ?>
                 <div class="select">
-                    <!--                            @hooked woocommerce_output_all_notices - 10 disable in demud/inc/template-functions-->
-                    <!--                            @hooked woocommerce_result_count - 20 - disable in demud/inc/template-functions-->
-                    <!--                            @hooked woocommerce_catalog_ordering - 30-->
-                    <?php do_action('woocommerce_before_shop_loop'); ?>
+
+                    <?php
+//                    @hooked woocommerce_output_all_notices - 10 disable in demud/inc/template-functions
+//                    @hooked woocommerce_result_count - 20 - disable in demud/inc/template-functions
+//                    @hooked woocommerce_catalog_ordering - 30
+                    do_action('woocommerce_before_shop_loop');
+                    ?>
                 </div>
             </div>
             <?php woocommerce_product_loop_start(); ?>

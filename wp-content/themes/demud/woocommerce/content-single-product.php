@@ -54,8 +54,8 @@ do_action('woocommerce_before_single_product');
             <div>
                 <div class="product-detail__content">
                     <div>
-                        <?php do_action('demud_show_single_meta'); ?>
                         <?php do_action('demud_show_product_title'); ?>
+                        <?php do_action('demud_show_single_meta'); ?>
                         <?php wc_get_template('single-product/tabs/description.php'); ?>
 
                     </div>

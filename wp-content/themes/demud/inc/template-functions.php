@@ -96,8 +96,8 @@ add_filter('woocommerce_get_price_html', function ($price_html, $product) {
 
         // Формируем HTML с нужными классами
         $price_html = '<span class="price">
-           <span class="woocommerce-Price-amount amount price__new">' . $sale_price . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></span>
-           <span class="woocommerce-Price-amount amount price__old">' . $regular_price . '&nbsp;<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></span>
+           <span class="woocommerce-Price-amount amount price__new">' . $sale_price .'<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></span>
+           <span class="woocommerce-Price-amount amount price__old">' . $regular_price .'<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></span>
         </span>';
     }
 

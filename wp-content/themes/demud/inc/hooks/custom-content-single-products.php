@@ -13,6 +13,8 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
 remove_action('woocommerce_single_product_summary', 'generate_product_data', 60);
 remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
 
 
 
@@ -36,6 +38,22 @@ add_filter('wc_add_to_cart_message_html', '__return_null');
 add_filter('woocommerce_add_to_cart_redirect', function($url) {
     return wc_get_cart_url(); // Перенаправление в корзину
 });
+
+//Убирает пробелы между ценой и символом валюты
+function custom_woocommerce_price_format( $format, $currency_pos ) {
+    switch ( $currency_pos ) {
+        case 'left':
+        case 'left_space':
+            $format = '%1$s%2$s';
+            break;
+        case 'right':
+        case 'right_space':
+            $format = '%2$s%1$s';
+            break;
+    }
+    return $format;
+}
+add_filter( 'woocommerce_price_format', 'custom_woocommerce_price_format', 10, 2 );
 
 
 
