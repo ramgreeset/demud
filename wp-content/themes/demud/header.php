@@ -13,6 +13,16 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+    <link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta property="og:title" content="Декор из гипса, который вдохновляет">
+    <meta property="og:description" content="Создаем стильные изделия, идеально дополняющие ваш интерьер.">
+    <meta property="og:image" content="/opengraph.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://demud.ru">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
