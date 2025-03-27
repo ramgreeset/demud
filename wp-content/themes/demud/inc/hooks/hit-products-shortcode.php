@@ -1,6 +1,6 @@
 <?php
 add_shortcode('hit_products', 'hit_products');
-function custom_products($atts)
+function hit_products($atts)
 {
     global $woocommerce_loop, $woocommerce;
 
