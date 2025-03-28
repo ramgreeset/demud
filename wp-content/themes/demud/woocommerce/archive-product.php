@@ -48,13 +48,13 @@ do_action('woocommerce_before_main_content');
             ?>
 
             <div class="section__header catalog__controls">
-                <?php aws_get_search_form( true ); ?>
+                <?php aws_get_search_form(true); ?>
                 <div class="select">
 
                     <?php
-//                    @hooked woocommerce_output_all_notices - 10 disable in demud/inc/template-functions
-//                    @hooked woocommerce_result_count - 20 - disable in demud/inc/template-functions
-//                    @hooked woocommerce_catalog_ordering - 30
+                    //                    @hooked woocommerce_output_all_notices - 10 disable in demud/inc/template-functions
+                    //                    @hooked woocommerce_result_count - 20 - disable in demud/inc/template-functions
+                    //                    @hooked woocommerce_catalog_ordering - 30
                     do_action('woocommerce_before_shop_loop');
                     ?>
                 </div>
@@ -100,55 +100,82 @@ do_action('woocommerce_before_main_content');
         <div class="accordion js-accordion">
             <div class="accordion__item js-accordion-item">
                 <div class="accordion__header js-accordion-header">
-                    <span class="accordion__title title-h4">Как ухаживать за изделием?</span>
+                    <span class="accordion__title title-h4">Из чего сделаны ваши изделия?</span>
                     <svg class="accordion__icon icon">
-                        <use href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
                     </svg>
                 </div>
                 <div class="accordion__body js-accordion-body">
                     <div class="accordion__content content">
-                        <ol>
-                            <li>
-                                Изделия можно протирать тряпочкой. При необходимости помыть под струей холодной
-                                воды.
-                                Мытье в горячей воде и контакт с щелочами не рекомендуется , возможно повреждение
-                                поверхностного
-                                слоя.
-                            </li>
-                            <li>
-                                Предметы не предназначены для употребления пищи людьми и животными.
-                            </li>
-                            <li>
-                                Избегать длительный контакт с водой.
-                            </li>
-                        </ol>
+                        Наш декор изготовлен из высококачественного гипса. Он экологичен, безопасен и долговечен.
                     </div>
                 </div>
             </div>
             <div class="accordion__item js-accordion-item">
                 <div class="accordion__header js-accordion-header">
-                    <span class="accordion__title title-h4">Как оформить заказ?</span>
+                    <span class="accordion__title title-h4">Как ухаживать за гипсовыми изделиями?</span>
                     <svg class="accordion__icon icon">
-                        <use href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
                     </svg>
                 </div>
                 <div class="accordion__body js-accordion-body">
                     <div class="accordion__content content">
-                        <ol>
-                            <li>
-                                Изделия можно протирать тряпочкой. При необходимости помыть под струей холодной
-                                воды.
-                                Мытье в горячей воде и контакт с щелочами не рекомендуется , возможно повреждение
-                                поверхностного
-                                слоя.
-                            </li>
-                            <li>
-                                Предметы не предназначены для употребления пищи людьми и животными.
-                            </li>
-                            <li>
-                                Избегать длительный контакт с водой.
-                            </li>
-                        </ol>
+                        Протирать мягкой сухой или чуть влажной тканью. Не рекомендуется мыть под струей воды, чтобы
+                        избежать
+                        повреждений.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion__item js-accordion-item">
+                <div class="accordion__header js-accordion-header">
+                    <span class="accordion__title title-h4">Можно ли заказать изделие в другом цвете?</span>
+                    <svg class="accordion__icon icon">
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
+                    </svg>
+                </div>
+                <div class="accordion__body js-accordion-body">
+                    <div class="accordion__content content">
+                        Да, мы можем покрасить гипсовые изделия в разные цвета. Свяжитесь с нами, чтобы обсудить детали.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion__item js-accordion-item">
+                <div class="accordion__header js-accordion-header">
+                    <span class="accordion__title title-h4">Доставляете ли вы в другие регионы?</span>
+                    <svg class="accordion__icon icon">
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
+                    </svg>
+                </div>
+                <div class="accordion__body js-accordion-body">
+                    <div class="accordion__content content">
+                        Да, мы отправляем заказы по всей России. Стоимость и сроки зависят от вашего города.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion__item js-accordion-item">
+                <div class="accordion__header js-accordion-header">
+                    <span class="accordion__title title-h4">Как упаковываются гипсовые изделия при доставке?</span>
+                    <svg class="accordion__icon icon">
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
+                    </svg>
+                </div>
+                <div class="accordion__body js-accordion-body">
+                    <div class="accordion__content content">
+                        Мы тщательно упаковываем каждый заказ в плотную упаковку с защитой, чтобы он доехал в целости.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion__item js-accordion-item">
+                <div class="accordion__header js-accordion-header">
+                    <span class="accordion__title title-h4">Можно ли заказать индивидуальный дизайн?</span>
+                    <svg class="accordion__icon icon">
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
+                    </svg>
+                </div>
+                <div class="accordion__body js-accordion-body">
+                    <div class="accordion__content content">
+                        Да, мы можем изготовить декор по вашему эскизу или пожеланиям. Сроки и стоимость обсуждаются
+                        индивидуально.
                     </div>
                 </div>
             </div>
@@ -156,53 +183,26 @@ do_action('woocommerce_before_main_content');
                 <div class="accordion__header js-accordion-header">
                     <span class="accordion__title title-h4">Как оплатить заказ?</span>
                     <svg class="accordion__icon icon">
-                        <use href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
                     </svg>
                 </div>
                 <div class="accordion__body js-accordion-body">
                     <div class="accordion__content content">
-                        <ol>
-                            <li>
-                                Изделия можно протирать тряпочкой. При необходимости помыть под струей холодной
-                                воды.
-                                Мытье в горячей воде и контакт с щелочами не рекомендуется , возможно повреждение
-                                поверхностного
-                                слоя.
-                            </li>
-                            <li>
-                                Предметы не предназначены для употребления пищи людьми и животными.
-                            </li>
-                            <li>
-                                Избегать длительный контакт с водой.
-                            </li>
-                        </ol>
+                        Оплата возможна картой, электронными кошельками или наложенным платежом при получении.
                     </div>
                 </div>
             </div>
             <div class="accordion__item js-accordion-item">
                 <div class="accordion__header js-accordion-header">
-                    <span class="accordion__title title-h4">Как оформить доставку?</span>
+                    <span class="accordion__title title-h4">Можно ли сделать оптовый заказ?</span>
                     <svg class="accordion__icon icon">
-                        <use href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-down"></use>
                     </svg>
                 </div>
                 <div class="accordion__body js-accordion-body">
                     <div class="accordion__content content">
-                        <ol>
-                            <li>
-                                Изделия можно протирать тряпочкой. При необходимости помыть под струей холодной
-                                воды.
-                                Мытье в горячей воде и контакт с щелочами не рекомендуется , возможно повреждение
-                                поверхностного
-                                слоя.
-                            </li>
-                            <li>
-                                Предметы не предназначены для употребления пищи людьми и животными.
-                            </li>
-                            <li>
-                                Избегать длительный контакт с водой.
-                            </li>
-                        </ol>
+                        Конечно! Мы сотрудничаем с дизайнерами, магазинами и студиями. Свяжитесь с нами для расчета
+                        стоимости.
                     </div>
                 </div>
             </div>

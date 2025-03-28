@@ -23,7 +23,6 @@ get_header( 'shop' ); ?>
 
 	<section class="page-header">
 		<div class="container page-header__container">
-
 <!--	@hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		@hooked woocommerce_breadcrumb - 20-->
 	<?php do_action( 'woocommerce_before_main_content' ); ?>

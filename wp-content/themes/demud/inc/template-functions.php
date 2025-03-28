@@ -96,8 +96,8 @@ add_filter('woocommerce_get_price_html', function ($price_html, $product) {
 
         // Формируем HTML с нужными классами
         $price_html = '<span class="price">
-           <span class="woocommerce-Price-amount amount price__new">' . $sale_price .'<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></span>
-           <span class="woocommerce-Price-amount amount price__old">' . $regular_price .'<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></span>
+           <span class="woocommerce-Price-amount amount price__new">' . $sale_price . '<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></span>
+           <span class="woocommerce-Price-amount amount price__old">' . $regular_price . '<span class="woocommerce-Price-currencySymbol">' . $currency . '</span></span>
         </span>';
     }
 
@@ -198,24 +198,26 @@ add_filter('woocommerce_quantity_input_args', function ($args, $product) {
 }, 10, 2);
 
 //Добавляем класс к тегу <a>
-function woocommerce_template_loop_category_link_open( $category ) {
-    $category_term = get_term( $category, 'product_cat' );
-    $category_name = ( ! $category_term || is_wp_error( $category_term ) ) ? '' : $category_term->name;
+function woocommerce_template_loop_category_link_open($category)
+{
+    $category_term = get_term($category, 'product_cat');
+    $category_name = (!$category_term || is_wp_error($category_term)) ? '' : $category_term->name;
 
     /* translators: %s: Category name */
-    echo '<a class="category-card" aria-label="' . sprintf( esc_attr__( 'Visit product category %1$s', 'woocommerce' ), esc_attr( $category_name ) ) . '" href="' . esc_url( get_term_link( $category, 'product_cat' ) ) . '">';
+    echo '<a class="category-card" aria-label="' . sprintf(esc_attr__('Visit product category %1$s', 'woocommerce'), esc_attr($category_name)) . '" href="' . esc_url(get_term_link($category, 'product_cat')) . '">';
 }
 
 //Меняем тег h2 на h3 в карточке категорий
-function woocommerce_template_loop_category_title( $category ) {
+function woocommerce_template_loop_category_title($category)
+{
     ?>
     <h3 class="woocommerce-loop-category__title category-card__title">
         <?php
-        echo esc_html( $category->name );
+        echo esc_html($category->name);
 
-        if ( $category->count > 0 ) {
+        if ($category->count > 0) {
             // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-            echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . esc_html( $category->count ) . ')</mark>', $category );
+            echo apply_filters('woocommerce_subcategory_count_html', ' <mark class="count">(' . esc_html($category->count) . ')</mark>', $category);
         }
         ?>
     </h3>
@@ -223,10 +225,12 @@ function woocommerce_template_loop_category_title( $category ) {
 }
 
 //Убираем кол-во элементов в title категорий
-function remove_woocommerce_category_count() {
+function remove_woocommerce_category_count()
+{
     return '';
 }
-add_filter( 'woocommerce_subcategory_count_html', 'remove_woocommerce_category_count' );
+
+add_filter('woocommerce_subcategory_count_html', 'remove_woocommerce_category_count');
 
 
 @include_once('hooks/custom-content-single-products.php');

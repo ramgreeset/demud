@@ -16,13 +16,6 @@
     <link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <meta property="og:title" content="Декор из гипса, который вдохновляет">
-    <meta property="og:description" content="Создаем стильные изделия, идеально дополняющие ваш интерьер.">
-    <meta property="og:image" content="/opengraph.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://demud.ru">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="ru_RU">
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
@@ -34,8 +27,7 @@
 <div class="layout">
     <header class="header">
         <div class="container header__container">
-<!--            <a class="logo" href="--><?php //echo home_url();?><!--">--><?php //bloginfo('name');?><!--</a>-->
-            <a class="logo" href="<?php echo home_url();?>">
+            <a class="logo" href="<?php echo home_url(); ?>">
                 <svg class="logo__icon">
                     <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#demud"></use>
                 </svg>
@@ -50,16 +42,16 @@
 
                 <button class="header__button button button--icon">
                     <svg class="icon">
-                        <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#heart"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/sprite.svg#heart"></use>
                     </svg>
                 </button>
 
-                <button class="header__button button button--icon">
+                <a href="<?php echo wc_get_cart_url(); ?>" class="header__button button button--icon">
                     <svg class="icon">
-                        <use xlink:href="<?php echo get_template_directory_uri()?>/assets/sprite.svg#handbag"></use>
+                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/sprite.svg#handbag"></use>
                     </svg>
-                    <span class="header__button-count chip">0</span>
-                </button>
+                    <span class="header__button-count chip"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                </a>
 
                 <button class="header__button button button--icon js-menu-button">
                     <svg class="icon">
