@@ -46,12 +46,7 @@
                     </svg>
                 </button>
 
-                <a href="<?php echo wc_get_cart_url(); ?>" class="header__button button button--icon">
-                    <svg class="icon">
-                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/sprite.svg#handbag"></use>
-                    </svg>
-                    <span class="header__button-count chip"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                </a>
+                <?php woocommerce_mini_cart();?>
 
                 <button class="header__button button button--icon js-menu-button">
                     <svg class="icon">

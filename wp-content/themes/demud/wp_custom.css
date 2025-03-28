@@ -43,3 +43,8 @@ height: 100%;
 .product_title{
     margin: 0;
 }
+.header__button-count {
+    position: absolute;
+    top: 1.5rem;
+    right: -.5rem;
+}
