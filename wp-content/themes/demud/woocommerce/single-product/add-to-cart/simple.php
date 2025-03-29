@@ -37,11 +37,6 @@ if ($product->is_in_stock()) : ?>
             <div class="input-number__inner">
                 <?php
                 do_action('woocommerce_before_add_to_cart_quantity'); ?>
-                <button class="input-number__btn js-input-decrement">
-                    <svg class="input-number__icon icon">
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#minus"></use>
-                    </svg>
-                </button>
 
                 <?php
                 woocommerce_quantity_input(
@@ -52,11 +47,6 @@ if ($product->is_in_stock()) : ?>
                     )
                 ); ?>
 
-                <button class="input-number__btn js-input-increment">
-                    <svg class="input-number__icon icon">
-                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#plus"></use>
-                    </svg>
-                </button>
                 <?php
 
                 do_action('woocommerce_after_add_to_cart_quantity');

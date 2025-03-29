@@ -75,7 +75,6 @@ do_action('woocommerce_before_single_product');
                     ?>
 
                     <div class="product-detail__info">
-
                         <div class="rating">
                             <?php do_action('demud_show_single_rating'); ?>
 
