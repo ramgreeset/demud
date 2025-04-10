@@ -121,11 +121,11 @@
             <span class="footer__text">&copy; 2025 DEMUD. Все права защищены.</span>
         </div>
     </div>
-</footer></div>
-</div><!-- #page -->
+</footer>
+
+</div><!-- #layout -->
 
 <?php wp_footer(); ?>
-
 </body>
 </html>
 

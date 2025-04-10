@@ -37,8 +37,8 @@ do_action('woocommerce_before_single_product');
 
         <div class="grid grid--cols-2">
             <div class="product-detail__gallery">
+                <?php wc_get_template('loop/sale-flash.php'); ?>
                 <div class="swiper product-detail__slider js-product-slider">
-                    <?php wc_get_template('loop/sale-flash.php'); ?>
 
                     <div class="swiper-wrapper">
                         <?php wc_get_template('single-product/product-thumbnails.php') ?>
@@ -57,7 +57,6 @@ do_action('woocommerce_before_single_product');
                         <?php do_action('demud_show_product_title'); ?>
                         <?php do_action('demud_show_single_meta'); ?>
                         <?php wc_get_template('single-product/tabs/description.php'); ?>
-
                     </div>
 
                     <?php
@@ -76,35 +75,8 @@ do_action('woocommerce_before_single_product');
 
                     <div class="product-detail__info">
                         <div class="rating">
-                            <?php do_action('demud_show_single_rating'); ?>
+<!--                            --><?php //do_action('demud_show_single_rating'); ?>
 
-                            <ul class="rating__list">
-                                <li class="rating__item">
-                                    <svg class="rating__icon icon">
-                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#star-fill"></use>
-                                    </svg>
-                                </li>
-                                <li class="rating__item">
-                                    <svg class="rating__icon icon">
-                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#star-fill"></use>
-                                    </svg>
-                                </li>
-                                <li class="rating__item">
-                                    <svg class="rating__icon icon">
-                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#star-fill"></use>
-                                    </svg>
-                                </li>
-                                <li class="rating__item">
-                                    <svg class="rating__icon icon">
-                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#star-half-fill"></use>
-                                    </svg>
-                                </li>
-                                <li class="rating__item">
-                                    <svg class="rating__icon icon">
-                                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#star"></use>
-                                    </svg>
-                                </li>
-                            </ul>
                         </div>
                         <?php do_action('demud_show_single_price'); ?>
                     </div>
@@ -113,7 +85,6 @@ do_action('woocommerce_before_single_product');
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 

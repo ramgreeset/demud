@@ -35,6 +35,11 @@ if ($product->is_in_stock()) : ?>
         <?php do_action('woocommerce_before_add_to_cart_button'); ?>
         <div class="input-number js-input-number">
             <div class="input-number__inner">
+                <button type="button" class="input-number__btn js-input-decrement">
+                    <svg class="input-number__icon icon">
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#minus"></use>
+                    </svg>
+                </button>
                 <?php
                 do_action('woocommerce_before_add_to_cart_quantity'); ?>
 
@@ -51,14 +56,21 @@ if ($product->is_in_stock()) : ?>
 
                 do_action('woocommerce_after_add_to_cart_quantity');
                 ?>
+                <button type="button" class="input-number__btn js-input-increment">
+                    <svg class="input-number__icon icon">
+                        <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#plus"></use>
+                    </svg>
+                </button>
             </div>
         </div>
 
 
         <?php do_action('woocommerce_after_add_to_cart_button'); ?>
         <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>"
-                class="single_add_to_cart_button button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
+                class="single_add_to_cart_button button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html($product->single_add_to_cart_text()); ?>
+        </button>
     </form>
+
 
     <?php do_action('woocommerce_after_add_to_cart_form'); ?>
 

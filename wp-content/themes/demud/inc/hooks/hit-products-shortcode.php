@@ -1,5 +1,5 @@
 <?php
-add_shortcode('hit_products', 'hit_products');
+add_shortcode('content-hit-products', 'hit_products');
 function hit_products($atts)
 {
     global $woocommerce_loop, $woocommerce;
@@ -26,7 +26,7 @@ function hit_products($atts)
 
                 <?php while ($products->have_posts()) : $products->the_post(); ?>
 
-                    <?php wc_get_template_part('shortcode', 'hit-product'); ?>
+                    <?php wc_get_template_part('content', 'hit-products'); ?>
 
                 <?php endwhile; // end of the loop. ?>
     <?php endif;

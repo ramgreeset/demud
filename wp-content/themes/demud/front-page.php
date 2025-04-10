@@ -17,235 +17,121 @@ get_header();
 
     <main class="main">
         <!--Топ-->
-        <section class="hero">
-            <div class="container hero__container">
-                <div class="hero__item hero__item--light">
-                    <img class="hero__img" src="<?php echo get_template_directory_uri(); ?>/assets/hero.png" alt="">
-                </div>
-                <div class="hero__item hero__item--dark">
-                    <div class="hero__content">
-                        <h1 class="hero__title">Декор из гипса, <br> который вдохновляет</h1>
-                        <p class="hero__description">Создаем стильные изделия, идеально дополняющие ваш интерьер.</p>
+        <section class="main-banner">
+            <div class="swiper js-main-banner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="main-banner__item">
+                            <div class="main-banner__item-content">
+                                <h1 class="main-banner__item-title title-h1">Декор из гипса, <br> который вдохновляет</h1>
+                                <p class="main-banner__item-text">Создаем стильные изделия, идеально дополняющие ваш интерьер.</p>
+                            </div>
+                            <div class="main-banner__item-img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/001.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="main-banner__item">
+                            <div class="main-banner__item-content">
+                                <h2 class="main-banner__item-title title-h1">Летняя распродажа!</h2>
+                                <p class="main-banner__item-text">Скидки до 30% на весь ассортимент. Используйте промокод SUMMER.</p>
+                                <a href="#" class="button button--outline">Узнать подробности</a>
+                            </div>
+                            <div class="main-banner__item-img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/003.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="main-banner__item">
+                            <div class="main-banner__item-content">
+                                <h2 class="main-banner__item-title title-h1">Летняя распродажа!</h2>
+                                <p class="main-banner__item-text">Скидки до 30% на весь ассортимент. Используйте промокод SUMMER.</p>
+                                <a href="#" class="button button--outline">Узнать подробности</a>
+                            </div>
+                            <div class="main-banner__item-img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/005.jpg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="swiper-pagination"></div>
             </div>
         </section>
         <!--Категории-->
-        <section class="section">
+        <section class="main-categories section">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Категории</h2>
-                    <a href="" class="button button--link">
+                    <h2 class="section__title">Каталог</h2>
+                    <a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="button button--link">
                         Все товары
-                        <svg class="section__icon icon">
+                        <svg class="icon">
                             <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#arrow-right"></use>
                         </svg>
                     </a>
                 </div>
-                <?php echo do_shortcode('[product_categories number="8" parent="0"]') ?>
-
-            </div>
-        </section>
-        <!--Баннер-->
-        <section class="main-banner section">
-            <div class="container">
-                <div class="swiper js-main-banner">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="main-banner__item">
-                                <div class="main-banner__item-content">
-                                    <h2 class="main-banner__item-title">Летняя распродажа!</h2>
-                                    <p class="main-banner__item-text">Скидки до 30% на весь ассортимент. Используйте
-                                        промокод SUMMER.</p>
-                                    <a href="#" class="button button--outline">Узнать подробности</a>
-                                </div>
-                                <div class="main-banner__item-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/005.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="main-banner__item">
-                                <div class="main-banner__item-content">
-                                    <h2 class="main-banner__item-title">Летняя распродажа!</h2>
-                                    <p class="main-banner__item-text">Скидки до 30% на весь ассортимент. Используйте
-                                        промокод SUMMER.</p>
-                                    <a href="#" class="button button--outline">Узнать подробности</a>
-                                </div>
-                                <div class="main-banner__item-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/002.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="main-banner__item">
-                                <div class="main-banner__item-content">
-                                    <h2 class="main-banner__item-title">Летняя распродажа!</h2>
-                                    <p class="main-banner__item-text">Скидки до 30% на весь ассортимент. Используйте
-                                        промокод SUMMER.</p>
-                                    <a href="#" class="button button--outline">Узнать подробности</a>
-                                </div>
-                                <div class="main-banner__item-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/007.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-pagination"></div>
+                <div class="main-categories__grid grid grid--cols-4">
+<!--                    --><?php //echo do_shortcode('[product_categories]')?>
+                    <a href="<?php echo esc_url( get_term_link( 'coasters', 'product_cat' ) ); ?>" class="category-card">
+                        <span class="category-card__title">Подставки</span>
+                        <svg class="icon">
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#fire-thin"></use>
+                        </svg>
+                    </a>
+                    <a href="<?php echo esc_url( get_term_link( 'candlesticks', 'product_cat' ) ); ?>" class="category-card">
+                        <span class="category-card__title">Подсвечники</span>
+                        <svg class="icon">
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#flame-thin"></use>
+                        </svg>
+                    </a>
+                    <a href="<?php echo esc_url( get_term_link( 'accessories', 'product_cat' ) ); ?>" class="category-card">
+                        <span class="category-card__title">Вазы</span>
+                        <svg class="icon">
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#potted-plant-thin"></use>
+                        </svg>
+                    </a>
+                    <a href="<?php echo esc_url( get_term_link( 'accessories', 'product_cat' ) ); ?>" class="category-card">
+                        <span class="category-card__title">Аксессуары</span>
+                        <svg class="icon">
+                            <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#house-thin"></use>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
         <!--Популярные-->
-        <section class="section js-main-products">
+        <section class="section main-cards js-main-cards">
             <div class="container">
                 <div class="section__header">
                     <h2 class="section__title">Популярное</h2>
 
                     <div class="navigation">
-                        <button class="navigation__button button button--icon js-main-products-prev">
+                        <button class="navigation__button button button--icon js-main-cards-prev">
                             <svg class="icon">
                                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-left"></use>
                             </svg>
                         </button>
-                        <button class="navigation__button button button--icon js-main-products-next">
+                        <button class="navigation__button button button--icon js-main-cards-next">
                             <svg class="icon">
                                 <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#caret-right"></use>
                             </svg>
                         </button>
-                    </div>
-                </div>
-                <div class="swiper js-main-products-slider">
+                    </div>    </div>
+                <div class="swiper js-main-cards-slider">
                     <div class="swiper-wrapper">
-                        <?php echo do_shortcode('[hit_products]') ?>
+                        <?php echo do_shortcode('[content-hit-products]');?>
                     </div>
                 </div>
-        </section>
-        <!--Блог-->
-        <section class="section">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Блог</h2>
-                    <a href="" class="button button--link">
-                        Все статьи
-                        <svg class="section__icon icon">
+
+                <div class="main-cards__footer">
+                    <a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="main-cards__button button button--outline">
+                        Все товары
+                        <svg class="icon">
                             <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#arrow-right"></use>
                         </svg>
                     </a>
-                </div>
-                <div class="grid grid--cols-4">
-                    <div class="news-card">
-                        <a class="news-card__header" href="">
-                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png"
-                                 alt="">
-                            <span class="news-card__badge badge">New</span>
-                        </a>
-                        <div class="news-card__body">
-                            <div class="date">
-                                <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#calendar"></use>
-                                </svg>
-                                <time datetime="2025-03-13">13 марта 2025</time>
-                            </div>
-                            <a href="">
-                                <h3 class="news-card__title">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis
-                                    rerum sunt vero.
-                                </h3>
-                            </a>
-                            <p class="news-card__description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque,
-                                distinctio doloremque harum
-                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos
-                                ratione rerum saepe tempore
-                                tenetur voluptatum!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <a class="news-card__header" href="">
-                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png"
-                                 alt="">
-                            <span class="news-card__badge badge">New</span>
-                        </a>
-                        <div class="news-card__body">
-                            <div class="date">
-                                <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#calendar"></use>
-                                </svg>
-                                <time datetime="2025-03-13">13 марта 2025</time>
-                            </div>
-                            <a href="">
-                                <h3 class="news-card__title">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis
-                                    rerum sunt vero.
-                                </h3>
-                            </a>
-                            <p class="news-card__description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque,
-                                distinctio doloremque harum
-                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos
-                                ratione rerum saepe tempore
-                                tenetur voluptatum!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <a class="news-card__header" href="">
-                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png"
-                                 alt="">
-                            <span class="news-card__badge badge">New</span>
-                        </a>
-                        <div class="news-card__body">
-                            <div class="date">
-                                <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#calendar"></use>
-                                </svg>
-                                <time datetime="2025-03-13">13 марта 2025</time>
-                            </div>
-                            <a href="">
-                                <h3 class="news-card__title">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis
-                                    rerum sunt vero.
-                                </h3>
-                            </a>
-                            <p class="news-card__description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque,
-                                distinctio doloremque harum
-                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos
-                                ratione rerum saepe tempore
-                                tenetur voluptatum!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <a class="news-card__header" href="">
-                            <img class="news-card__img" src="<?php echo get_template_directory_uri(); ?>/assets/new.png"
-                                 alt="">
-                            <span class="news-card__badge badge">New</span>
-                        </a>
-                        <div class="news-card__body">
-                            <div class="date">
-                                <svg class="icon">
-                                    <use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/sprite.svg#calendar"></use>
-                                </svg>
-                                <time datetime="2025-03-13">13 марта 2025</time>
-                            </div>
-                            <a href="">
-                                <h3 class="news-card__title">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at, natus omnis
-                                    rerum sunt vero.
-                                </h3>
-                            </a>
-                            <p class="news-card__description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid atque,
-                                distinctio doloremque harum
-                                impedit laboriosam laudantium magni nemo omnis perspiciatis praesentium quod quos
-                                ratione rerum saepe tempore
-                                tenetur voluptatum!
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
